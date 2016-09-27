@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>积分兑换</title>
+		<script>
+			var c = window.screen.width;
+			if (c != 720) {
+				if (c > 720) {
+					var prt = 0.5;
+				} else {
+					var prt = c / 720;
+				}
+			} else {
+				var prt = 0.5;
+			}
+			document.write('<meta name="viewport" content="width=device-width, initial-scale=' + prt + ', maximum-scale=' + prt + ', minimum-scale=' + prt + '" />');
+		</script>
+		<link rel="stylesheet" href="./src/fankui/index.css" />
+	</head>
+
+	<body>
+		<header class="headerX">
+			<ul>
+				<li class="back">
+					<a href="../webapp/src/zhanghu/index.html"></li>
+				<li class="wenzi chongzhi"><span>积分兑换</span></li>
+			</ul>
+		</header>
+
+		<div class="jifen_box">
+			<div class="jifen_num">
+				<img class="jifen_dh" src="images/jifen_dh.jpg" />
+				<p>当前可用积分</p>
+				<h1>542</h1>
+			</div>
+		</div>
+		<div class="jifen_jisuan">
+			<div class="dh_zlb">
+				<p>可兑换助理币<span>￥<a id="jf" href="#">54</a></span></p>
+			</div>
+			<div class="dh_tx">
+				<p>
+					兑换助理币
+					<span>￥</span>
+					<input type="text" />
+				</p>
+			</div>
+			<button class="jifen_btn">兑换</button>
+		</div>
+	</body>
+
+</html>

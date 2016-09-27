@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>融e保</title>
+    <link href="css/sale.css" type="text/css" rel="stylesheet">
+    <script src="js/zepto.min.js" type="text/javascript"></script>
+    <script src="js/sale.js" type="text/javascript"></script>
+    <script src="js/iscroll.js" type="text/javascript"></script>
+    <script src="js/iscroll_salexiansuo.js" type="text/javascript"></script>
+    <script>
+        var storage = window.localStorage;
+        if(storage.getItem("flag")!=null && storage.getItem("flag")==2){
+            window.location.href="login.html";
+        }
+    </script>
+    <!--顶层页面返回键-->
+    <script type="text/javascript" src="js/cordova.js"></script>
+    <script>
+        document.addEventListener("backbutton",onBackKeyDown,false);
+        function onBackKeyDown(){  navigator.app.exitApp();  }
+    </script>
+</head>
+<body>
+<header class="headerR">
+    <ul class="sale_nav">
+        <li class="wenzi"><span>销售线索</span></li>
+        <li class="filter">筛选</li>
+        <li class="myself"><a href="salesLeadsOwn.html">我的</a></li>
+    </ul>
+</header>
+<header class="headerR_under"></header>
+
+
+
+
+
+<div id="wrapper">
+    <div id="scroller">
+        <header class="headerR_under" style="height: 96px;"></header>
+        <div id="pullDown">
+            <span class="pullDownLabel"></span>
+        </div>
+        <!--<div class="qiandao" id="qiandao">-->
+            <!--签到 送5积分-->
+        <!--</div>-->
+        <!--<script>-->
+            <!--function qiandao(){-->
+                <!--$(".qiandao").animate({-->
+                    <!--height:0,-->
+                    <!--opacity:0-->
+                <!--},500);-->
+            <!--}-->
+            <!--setTimeout("qiandao()",3000);-->
+        <!--</script>-->
+        <div class="guanzhu">
+            <span class="province">北京市</span><span class="city">北京</span>
+            <!--本期不显示三级区县-->
+            <!--<span class="area"></span>-->
+            <ul class="guanzhu_baoxian">
+                <!--<li>财产险</li>-->
+                <!--<li>车险</li>-->
+            </ul>
+        </div>
+        <div class="data_kong">
+            没有销售线索，试试修改右上角筛选条件
+        </div>
+        <div class="content_saleXiansuo">
+            <ul id="thelist">
+                <li class="info_list" style="display: none">
+                    <div class="info_wrap clearfix">
+                        <div class="info">
+                            <div class="username">客户</div><span class="tel">13946660506</span>
+                            <div class="baoxian">
+                                关注
+                                <ul class="baoxian_show">
+                                    <!--<li>寿险</li>-->
+                                    <!--<li>大病</li>-->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="qiang_info">抢</div>
+                    </div>
+
+                    <div class="date">
+                    </div>
+                </li>
+            </ul>
+
+            <div id="pullUp">
+
+            </div>
+        </div>
+
+        <!--<footer class="footerM">-->
+            <!--<div class="zhanwei"></div>-->
+        <!--</footer>-->
+    </div>
+</div>
+
+<footer>
+    <ul>
+        <!--<li class="selected">
+            <a href="saleXiansuo.html" class="menu_sale">销售线索</a>
+        </li>-->
+        <li>
+            <a href="main.html" class="menu_pipei">客户画像</a>
+        </li>
+        <li>
+            <a href="zhanghu.html" class="menu_zhanghu">账户</a>
+        </li>
+        <li>
+            <a href="shezhi.html" class="menu_more">更多</a>
+        </li>
+    </ul>
+</footer>
+
+<script>
+    var isIOS = (/iphone|ipad/gi).test(navigator.appVersion);
+    if(isIOS){
+        document.getElementsByTagName("footer")[0].style.bottom="20px";
+    }
+</script>
+
+<!--筛选遮罩-->
+<div class="bg_filter" style="display: none;">
+    <!--筛选-->
+    <div class="content_filter">
+        <div class="area_filter clearfix">
+            <div>地区</div>
+            <ul class="sheng">
+
+            </ul>
+            <ul class="shi">
+
+            </ul>
+            <ul class="qu">
+
+            </ul>
+        </div>
+        <div class="xianzhong">
+            <div>险种</div>
+            <ul class="clearfix">
+                <li>财产险</li>
+                <li>健康险</li>
+                <li>理财险</li>
+                <li>车险</li>
+                <li>旅游险</li>
+                <li>女性险</li>
+                <li>少儿险</li>
+                <li>寿险</li>
+                <li>团体险</li>
+                <li>养老险</li>
+                <li>意外险</li>
+            </ul>
+        </div>
+        <div class="btn">
+            <button class="confirm">确定</button>
+            <button class="cancel">取消</button>
+        </div>
+    </div>
+</div>
+<!--遮罩-->
+<div class="bg" style="display: none;">
+</div>
+<!--session为空,请重新登录-->
+<div class="content_session content_sessionNull" style="display: none;">
+    <div class="warning"><img src="images/login_fail.png"></div>
+    <p>您的登录状态已改变，请重新登录。</p>
+    <button class="finish_sure">重新登录</button>
+</div>
+<!--账号已在其他设备上登录-->
+<div class="content_session content_other" style="display: none;">
+    <div class="warning"><img src="images/login_fail.png"></div>
+    <p>您的账号已在其他设备上登录，请在本设备上重新登录。</p>
+    <button class="finish_sure">重新登录</button>
+</div>
+<!--722内部错误-->
+<div class="content_session content_contact" style="display: none;">
+    <div class="warning"><img src="images/warning.png"></div>
+    <p>程序似乎出了点问题，程序员君在玩命修复中...</p>
+    <button class="contact">联系我们</button>
+    <button class="cancel_contact">取消</button>
+</div>
+<!--筛选未选择地区险种-->
+<div class="bg_content_nochecked" style="display: none;">
+    <div class="content_session content_nochecked">
+        <div class="warning"><img src="images/warning.png"></div>
+        <p>请选择地区或险种。</p>
+        <button class="finish_queding">确定</button>
+    </div>
+</div>
+</body>
+</html>

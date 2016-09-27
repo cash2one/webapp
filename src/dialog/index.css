@@ -1,0 +1,60 @@
+.J_Dialog {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    font-size: 28px;
+    z-index: 999;
+    display: inline-block;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.warning {
+    text-align: center;
+    margin: 48px auto 30px;
+}
+
+.J_Dialog .content {
+    color: #21262b;
+    padding: 0 42px;
+    text-align: center;
+}
+
+.J_Dialog .buttons {;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.J_Dialog .buttons button {
+    width: 200px;
+    height: 68px;
+    color: white;
+    font-size: 32px;
+    background-color: #f04e30;
+    border-radius: 7px
+}
+
+.J_Dialog .buttons button.cancel {
+    width: 200px;
+    height: 68px;
+    color: white;
+    font-size: 32px;
+    background-color: #aaa;
+    border-radius: 7px
+}
+
+.J_Dialog .contact, .J_Dialog .chongzhi {
+    margin-left: 40px;
+    margin-right: 0;
+}
+
+.J_Dialog .cancel, .J_Dialog .cancel01 {
+    margin-left: 20px;
+    margin-right: 0;
+    background-color: #a4aab0;
+}

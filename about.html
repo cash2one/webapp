@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>融e保</title>
+    	<script>
+		
+		var c=window.screen.width;
+		
+		if(c!=720){
+			if(c>720){
+				var prt=0.5;
+			}else{
+				var prt=c/720;
+				
+				
+			}
+		}else{
+			var prt=0.5;
+		}
+		document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+		
+		
+		
+	</script>
+    <link href="css/shezhi.css" type="text/css" rel="stylesheet">
+		<script>
+		
+		var storage = window.localStorage; 
+						
+						
+						
+		if(storage.getItem("flag")!=null && storage.getItem("flag")==2){
+			window.location.href="login.html";
+		}
+		
+		
+		
+		
+		
+	</script>
+</head>
+<body style="background-color: #ffffff">
+<header class="headerR">
+
+    <ul>
+        <li class="back"><a href="shezhi.html"></a></li>
+        <li class="shuxian"></li>
+        <li class="wenzi"><span>关于</span></li>
+    </ul>
+
+</header>
+
+<header class="headerR_under"></header>
+
+<div class="content_about clearfix">
+	<img src="images/about.png">
+	<div class="content_about_right">
+		<div class="about_title">融e保<span class="about_banben">V1.1</span></div>
+		<div class="about_wenzi">
+			是一款服务于保险的一线销售人员，使之更好的服务客户的产品。从初阶的新手销售迅速了解客户需求到高端服务更准确的把握客户都能提供直接的帮助。
+		</div>
+	</div>
+</div>
+
+<div class="erweima">
+	<img src="images/erweima_about.png"><br>
+	分享下载链接
+</div>
+
+
+<footer class="about_footer">
+    <div>
+        百融金服•版权所有<br/>
+        Copyright©2016 All Rights Reserved.
+    </div>
+</footer>
+</body>
+</html>

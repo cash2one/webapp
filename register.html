@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+		<script>
+		
+		var c=window.screen.width;
+		
+		if(c!=720){
+			if(c>720){
+				var prt=0.5;
+			}else{
+				var prt=c/720;
+				
+				
+			}
+		}else{
+			var prt=0.5;
+		}
+		document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+		
+		
+		
+	</script>
+   
+   
+   
+	<title>融e保</title>
+	<link type="text/css" href="css/css.css" rel="stylesheet" />
+	<script src="js/zepto.min.js" language="javascript" type="text/javascript"></script>
+	<script src="js/js.js" language="javascript" type="text/javascript"></script>
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript" src="js/BrCordova.js"></script>
+		
+	
+</head>
+
+<body>
+
+	
+		<header class="headerR">
+		
+			<ul>
+				<li class="back"><a href="login.html"></a></li>
+				
+				<li class="shuxian"></li>
+				<li class="wenzi"><span>注册</span></li>
+			</ul>
+			
+		</header>
+
+		<header class="headerR_under"></header>
+
+
+		<div class="contentR">
+			
+			<div class="r_ipt1">
+				<span class="r_iptspan">+86</span>
+				<input type="text" placeholder="您的手机号" class="r_uphone" maxlength=11 />	
+			</div>
+			
+			<div class="space_div"></div>
+			
+			<div class="r_ipt2">
+				<span class="r_iptspan">验证码</span>
+				<input type="text" placeholder="输入验证码" class="ryzm" maxlength=6 />	
+				<span class="yanzheng">
+					<!--<input onclick="settime(this,60)" type="button" value="获取验证码" class="yzm">-->
+					<button onclick="settime(this,60)" class="yzm">获取验证码</button>
+				</span>
+			</div>
+			
+			<div class="space_div"></div>
+			
+			<div class="r_ipt3">
+				<span class="r_iptspan">密码</span>
+				<input type="password" placeholder="填写密码" class="rpwd"  maxlength=20 />	
+				<span class="eyePwd"></span>
+			</div>
+			
+			<div class="space_div"></div>
+			<div class="r_ipt4">
+				<button class="register">注册</button>
+			</div>
+			<div class="r_ipt5">
+				<input type="checkbox" checked class="agreed" />
+				<span>同意 <a href="xieyi.html?flag=2">《融e保服务协议》</a>
+				</span>
+			</div>
+		
+					<div class="hiddenDivR" style="display:none;">
+						<div class="errorText">
+							<span class="errorImg"><img src="images/wrong.png" /></span>
+							<span class="errorInfo">密码不能为空，请输入密码</span>
+						</div>
+						<button class="errorBtn">确定</button>
+					</div>
+			
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		
+			<script type="text/javascript">
+		
+			$(".yzm").attr("disabled", true);
+			$(".r_uphone ").keyup(function(){
+				var reg= /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 			
+				if( $(".r_uphone ").val()==""|| $(".r_uphone ").val()=="您的手机号" || $(".r_uphone").val().length!=11|| !reg.test($(".r_uphone ").val())){ 
+					$(".yzm").attr("disabled", true); 
+					$(".yzm").css('backgroundColor','#afafaf')
+					
+				}else{
+					$(".yzm").removeAttr("disabled"); 
+					$(".yzm").css('backgroundColor','#f04e30')
+						        	
+				}		
+
+
+			})
+			var time; 
+			function settime(val,countdown) { 
+				
+				clearTimeout(time);
+				
+				var da=val.getAttribute("data-in");
+				
+				if(da==1){
+					val.removeAttribute("disabled");    
+					val.innerHTML="重新发送";
+					val.style.backgroundColor="#f04e30"
+					
+					val.setAttribute("data-in",2);
+					
+					return;
+				}
+				
+				if (countdown == 0) { 
+					val.removeAttribute("disabled");    
+					val.innerHTML="获取验证码";
+					val.style.backgroundColor="#f04e30"
+					
+					val.setAttribute("data-in",2);
+										
+				}else { 
+					val.setAttribute("disabled", true); 
+					val.innerHTML="请查收(" + countdown + ")";
+					val.style.backgroundColor="#afafaf"
+					countdown--;
+					val.setAttribute("data-in",2);
+				} 
+
+				time=setTimeout(function() { 
+
+					settime(val,countdown); 
+
+				},1000)	
+									 
+			}
+		
+		</script>
+			
+			
+			
+			
+			
+			
+			
+		<footer class="footerR"></footer>
+		<div class="bg" style="display:none;"></div>
+		<!--遮罩-->
+		<div class="bg_content_nochecked" style="display: none;">
+		</div>
+		<!--722内部错误-->
+		<div class="content_session content_contact" style="display: none;">
+			<div class="warning"><img src="images/warning.png"></div>
+			<p>程序似乎出了点问题，程序员君在玩命修复中...</p>
+			<button class="contact">联系我们</button>
+			<button class="cancel">取消</button>
+		</div>
+<script src="js/yanzheng.js" language="javascript" type="text/javascript"></script>
+	
+</body>
+</html>

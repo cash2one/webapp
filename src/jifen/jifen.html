@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>积分兑换</title>
+		<script>
+	        var c = window.screen.width;
+	        if (c != 720) {
+	            if (c > 720) {
+	                var prt = 0.5;
+	            } else {
+	                var prt = c / 720;
+	            }
+	        } else {
+	            var prt = 0.5;
+	        }
+	        document.write('<meta name="viewport" content="width=device-width, initial-scale=' + prt + ', maximum-scale=' + prt + ', minimum-scale=' + prt + '" />');
+    	</script>
+    	<link rel="stylesheet" href="../fankui/index.css" />
+	</head>
+	<body>
+		<header class="headerX">
+		    <ul>
+		        <li class="back"><a href="../zhanghu/index.html"></li>
+		        <li class="wenzi chongzhi"><span>积分兑换</span></li>
+		    </ul>
+		</header>
+		
+		<div class="jifen_box">
+			<div class="jifen_num">
+				<img class="jifen_dh" src="../../images/jifen_dh.jpg" />
+				<p>当前可用积分</p>
+				<h1>542</h1>
+			</div>
+		</div>
+		<div class="jifen_jisuan">
+			<div class="dh_zlb">
+				<p>可兑换助理币<span>￥<a id="jf" href="#">54</a></span></p>
+			</div>
+			<div class="dh_tx">
+				<p>
+					兑换助理币
+					<span>￥</span>
+					<input type="text" />
+				</p>
+			</div>
+			<button class="jifen_btn">兑换</button>
+		</div>
+		<script src="../../js/zepto.min.js"></script>
+		<script>
+			//返回的数字如果是555  渲染页面上
+				var A = 555;
+					$('.jifen_num').find('h1').text(A);
+					$('#jf').text(parseInt(A/10));
+					
+					
+//				$.ajax({   // 请求用户的积分  请求到了 把上面的代码写到success
+//					type:"get",
+//					url:"",
+//					async:true,
+//					success:function(d){
+//						console.log(d);
+//					}
+//				});	
+			
+		
+			var jifen = $('#jf').text(),
+				$dueihuan = $('.dh_tx').find('input'),
+				Nint=0;
+			$('.jifen_btn').on('click', function() {  //点击兑换  做提交
+				if (!$dueihuan.val()) {
+					alert('不能空')
+					return;
+				}else{
+					$.ajax({
+						type:"post",
+						url:"brAccount/intChangeRate.active",
+						success:function(d){
+							//传值  兑换成功
+						}
+					});
+				}
+			})
+			
+			$dueihuan.on('input', function() { //获取 剔除非数字  判断小于0或大于总数
+				    Nint = $(this).val();
+					Nint = Nint.replace(/\D+/g,"");
+				if (parseInt(Nint) >= parseInt(jifen)) {
+					Nint = jifen;
+				} else if (Nint <= 0) {
+					Nint = '';
+				};
+				console.log(jifen);
+					$(this).val(Nint);
+			});
+		</script>
+	</body>
+</html>

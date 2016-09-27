@@ -1,0 +1,135 @@
+@font-face {
+    font-family:DSF;
+    src: url(dsf.TTF);
+}
+body{
+    font-family:DSF;
+    font-size:1em;
+    background-color:#fafafa;
+}
+@media screen and (max-width:980px)
+{
+    body{
+        font-size:20px;
+    }
+}
+@media screen and (max-width:580px)
+{
+    body{
+        font-size:14px;
+    }
+}
+@media screen and (max-width:380px)
+{
+    body{
+        font-size:8px;
+    }
+}
+*{
+    margin:0;
+    padding:0;
+}
+/*html,body{*/
+    /*-webkit-text-size-adjust:none;*/
+/*}*/
+ul li{
+    list-style:none;
+}
+a{
+    color:#333;
+    text-decoration:none;
+    /*border: 1px solid red;*/
+}
+/*headerR================================================*/
+.headerR{
+    width:100%;
+    height:95px;
+    overflow:hidden;
+    margin:0 auto;
+    background-color:#3e454d;
+}
+.headerR ul{
+    width:100%;
+}
+.headerR ul li{
+    list-style:none;
+    float:left;
+}
+.back{
+    margin-left:5%;
+    margin-top:30px;
+    background-image: url(../images/fanhui.png);
+    width:32px;
+    height:32px;
+}
+.shuxian{
+    width:2px;
+    height:40px;
+    margin-left:5%;
+    margin-top:28px;
+    background-color:#21262b;
+}
+.wenzi{
+    margin-left:5%;
+    margin-top:30px;
+    height:32px;
+    line-height:32px;
+    color:#fafafa;
+    font-size:2.125em;
+}
+/*contentR======================================================*/
+.contentR{
+    width:85%;
+    margin:10px auto;
+    min-height:750px;
+}
+.r_ipt1{
+    width:100%;
+    height:90px;
+    line-height:90px;
+    border-bottom:1px #dbdcde solid;
+    /*border: 1px solid red;*/
+}
+.r_iptspan{
+    float:left;
+    font-size:1.875em;
+}
+.tel{
+    font-size:1.875em;
+    color: #cbced1;
+    margin-left: 10%;
+}
+.next{
+    width: 16px;
+    height: 32px;
+    background-image: url("../images/next.png");
+    float: right;
+    margin-right: 5%;
+    margin-top: 29px;
+}
+.banben{
+    float: right;
+    margin-right: 3%;
+    font-size:1.875em;
+    color: #cbced1;
+}
+footer{
+    width:85%;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+.exit{
+    font-family:DSF;
+    width:100%;
+    height:70px;
+    color:#f0f0f0;
+    line-height:70px;
+    font-size:2.125em;
+    background-color:#f04e30;
+    border:0px;
+    outline:none;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius:5px;
+    display: block;
+}

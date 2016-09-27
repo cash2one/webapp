@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<script>
+			var c = window.screen.width;
+			if (c != 720) {
+				if (c > 720) {
+					var prt = 0.5;
+				} else {
+					var prt = c / 720;
+				}
+			} else {
+				var prt = 0.5;
+			}
+			document.write('<meta name="viewport" content="width=device-width, initial-scale=' + prt + ', maximum-scale=' + prt + ', minimum-scale=' + prt + '" />')
+		</script>
+
+		<script>
+			var storage = window.localStorage;
+			if (storage.getItem("flag") != null && storage.getItem("flag") == 2) {
+				window.location.href = "login.html";
+			}
+		</script>
+
+		<!--顶层页面返回键-->
+		<script type="text/javascript" src="js/cordova.js"></script>
+		<script>
+			document.addEventListener("backbutton", onBackKeyDown, false);
+
+			function onBackKeyDown() {
+				navigator.app.exitApp();
+			}
+		</script>
+
+		<title>融e保</title>
+		<link type="text/css" href="css/css.css" rel="stylesheet" />
+		<link type="text/css" href="css/main.css" rel="stylesheet" />
+
+		<script src="js/zepto.min.js" language="javascript" type="text/javascript"></script>
+		<script src="init/main.js" language="javascript" type="text/javascript"></script>
+		<script src="js/iscroll.js" language="javascript" type="text/javascript"></script>
+		<script src="js/iscroll1.js" language="javascript" type="text/javascript"></script>
+
+		<style>
+			body {
+				background: #f0f0f0;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="header headerR">
+			<span>客户画像</span>
+		</header>
+
+		<div class="container">
+
+			<div id="wrapper">
+				<div id="scroller">
+					<header class="headerR_under"></header>
+
+					<div class="contentM">
+						<ul id="thelist">
+
+							<li class="pipeiLi" style="display:none;">
+								<p class="nameLi clearfix">
+									<span class="nameLi1">
+							<span><img src="images/man.png" /></span>
+									<span class="nameLi_truename">蔡元培</span>
+									</span>
+									<span class="nameLi2"><img src="images/id_pipei.png" /></span>
+								</p>
+
+								<p class="hengxianP"></p>
+
+								<div class="starLi">
+
+									<p class="starLi1">
+										<img src="images/wealth.png" class="wealth_pic">
+										<span class="starLiWenzi">收支</span>
+										<span class="starLiImg">
+								<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										</span>
+									</p>
+
+									<p class="starLi2">
+										<img src="images/demand.png" class="demand_pic">
+										<span class="starLiWenzi starLi2Wenzi">需求</span>
+										<span class="starLiImg">
+								<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										</span>
+									</p>
+
+								</div>
+
+								<p class="dataLi clearfix">
+									<span class="dataLiS">2015年8月27日15:11:28</span>
+									<span class="dataLiA"><a href="#">查看详情</a></span>
+								</p> 
+
+							</li>
+
+							<li class="pipeiLi" style="display:none;">
+								<p class="nameLi clearfix">
+									<span class="nameLi1"><img src="images/woman.png" /><span class="nameLi_truename">蔡女士</span></span>
+									<span class="nameLi2"><img src="images/id_nopipei.png" /></span>
+								</p>
+
+								<p class="hengxianP"></p>
+
+								<div class="starLi">
+
+									<p class="starLi1">
+										<img src="images/wealth.png" class="wealth_pic">
+										<span class="starLiWenzi">收支</span>
+										<span class="starLiImg">
+								<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										</span>
+									</p>
+
+									<p class="starLi2">
+										<img src="images/demand.png" class="demand_pic">
+										<span class="starLiWenzi starLi2Wenzi">需求</span>
+										<span class="starLiImg">
+								<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										<span class="starLiImg1"><img src="images/star.png" /></span>
+										</span>
+									</p>
+
+								</div>
+
+								<p class="dataLi clearfix">
+									<span class="dataLiS">2015年8月27日15:11:28</span>
+									<span class="nodataLiA"><a href="#">未匹配成功</a></span>
+								</p>
+
+							</li>
+
+						</ul>
+
+						<div id="pullUp">
+
+						</div>
+
+					</div>
+
+					<footer class="footerM">
+						<div class="zhanwei"></div>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<div class="mainF">
+			<button class="mainBtn">+</button>
+			<div>新建匹配</div>
+		</div>
+
+		<footer class="footer_pipei">
+			<ul>
+				<!--<li>
+			<a href="saleXiansuo.html" class="menu_sale">销售线索</a>
+		</li>-->
+				<li class="selected">
+					<a href="main.html" class="menu_pipei">客户画像</a>
+				</li>
+				<li>
+					<a href="zhanghu.html" class="menu_zhanghu">账户</a>
+				</li>
+				<li>
+					<a href="shezhi.html" class="menu_more">更多</a>
+				</li>
+			</ul>
+		</footer>
+
+		<script>
+			var isIOS = (/iphone|ipad/gi).test(navigator.appVersion);
+			if (isIOS) {
+				document.getElementsByClassName("footer_pipei")[0].style.bottom = "20px";
+				document.getElementById("scroller").style.paddingBottom = "145px";
+			}
+		</script>
+
+		<!--遮罩-->
+		<div class="bg_content_nochecked" style="display: none;">
+		</div>
+		<!--session为空,请重新登录-->
+		<div class="content_session content_sessionNull" style="display: none;">
+			<div class="warning"><img src="images/login_fail.png"></div>
+			<p>您的登录状态已改变，请重新登录。</p>
+			<button class="finish_sure">重新登录</button>
+		</div>
+		<!--账号已在其他设备上登录-->
+		<div class="content_session content_other" style="display: none;">
+			<div class="warning"><img src="images/login_fail.png"></div>
+			<p>您的账号已在其他设备上登录，请在本设备上重新登录。</p>
+			<button class="finish_sure">重新登录</button>
+		</div>
+		<!--722内部错误-->
+		<div class="content_session content_contact" style="display: none;">
+			<div class="warning"><img src="images/warning.png"></div>
+			<p>程序似乎出了点问题，程序员君在玩命修复中...</p>
+			<button class="contact">联系我们</button>
+			<button class="cancel">取消</button>
+		</div>
+	</body>
+
+</html>

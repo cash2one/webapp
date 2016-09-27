@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+	<script>
+		
+		var c=window.screen.width;
+		
+		if(c!=720){
+			if(c>720){
+				var prt=0.5;
+			}else{
+				var prt=c/720;
+				
+				
+			}
+		}else{
+			var prt=0.5;
+		}
+		document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+		
+		
+		
+	</script>
+	
+	
+    <title>提示</title>
+	<link type="text/css" href="css/css.css" rel="stylesheet" />
+
+</head>
+<body>
+	<div id="tDiv" style="display:none;">
+		<p class="tDiv_1">如需浏览，请长按网址复制后使用浏览器访问</p>
+		<p class="tDiv_2">https://brokeraid.100credit.com/download/brokeraid.apk</p>
+	</div>
+
+
+	<script>
+		window.onload=function(){
+			function isWeiXin(){
+				var ua = window.navigator.userAgent.toLowerCase(); 
+				if(ua.match(/MicroMessenger/i) == 'micromessenger'){ 
+				  return true; 
+				}
+			}
+
+		    if(isWeiXin()){
+				document.getElementById('tDiv').style.display="block";
+	
+		    }else{
+				window.location.href="https://brokeraid.100credit.com/download/brokeraid.apk"
+			}
+			
+		}
+	</script>
+   
+	
+	
+	
+
+</body>
+</html>

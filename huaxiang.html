@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<script>
+			var c = window.screen.width;
+			if (c != 720) {
+				if (c > 720) {
+					var prt = 0.5;
+				} else {
+					var prt = c / 720;
+				}
+			} else {
+				var prt = 0.5;
+			}
+			document.write('<meta name="viewport" content="width=device-width, initial-scale=' + prt + ', maximum-scale=' + prt + ', minimum-scale=' + prt + '" />')
+		</script>
+
+		<script>
+			var storage = window.localStorage;
+			if (storage.getItem("flag") != null && storage.getItem("flag") == 2) {
+				window.location.href = "login.html";
+			}
+			var lianjie = window.location.href;
+			if (lianjie.indexOf('time_id') != -1) {
+				var tid = lianjie.split("?")[1];
+				storage.setItem('tid', tid);
+			}
+			//		window.onload=function() {
+			////		跳转
+			//			document.getElementsByClassName("back")[0].onclick = function () {
+			//				window.location.href=document.referrer;
+			////				window.history.back();
+			//			}
+			//		}
+		</script>
+
+		<title>融e保</title>
+		<link type="text/css" href="css/css.css" rel="stylesheet" />
+		<script src="js/zepto.min.js" language="javascript" type="text/javascript"></script>
+		<script src="js/hx.js" language="javascript" type="text/javascript"></script>
+		<style>
+			body {
+				background: #fff;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="headerR">
+			<ul>
+				<li class="back">
+					<a href="main.html"></a>
+				</li>
+				<li class="shuxian"></li>
+				<li class="wenzi"><span>客户画像</span></li>
+			</ul>
+
+		</header>
+
+		<header class="headerR_under"></header>
+
+		<div class="contentH">
+
+			<div class="h_Name">
+				<ul class="clearfix">
+					<li class="h_Name2"><img id="sexImg" src="images/sex.png" /></li>
+					<li class="h_Name1" id="userName"></li>
+					<li class="h_Name3" id="userAge"></li>
+					<li class="h_Name5"><img id="houseImg" src="images/h33.png" /></li>
+					<li class="h_Name6"><img id="carImg" src="images/h44.png" /></li>
+					<li class="h_Name7"><img id="highImg" src="images/h11.png" /></li>
+				</ul>
+			</div>
+
+			<div class="kong">
+				<span class="h_caifu_title">收支状况</span>
+				<a href="help.html#caifu"><img src="images/help.png"></a>
+			</div>
+
+			<div class="h_caifu">
+				<div class="yuanxingDiv clearfix">
+					<div class="circle1">
+						<div id="c1">
+							<div class="c1_part"></div>
+						</div>
+						<div class="shouru_1">
+							<p class="shouruLevel"></p>
+							<p class="city"></p>
+						</div>
+						<div class="shouru_2">年收入</div>
+					</div>
+
+					<div class="circle2">
+						<div id="c2">
+							<div class="c2_part"></div>
+						</div>
+						<div class="xiaofei_1">
+							<p class="xiaofeiLevel"></p>
+							<p class="xiaofeiMoney"></p>
+						</div>
+						<div class="xiaofei_2">年支出</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="kong">
+				<span class="h_xuqiu_title">保险偏好</span>
+				<a href="help.html#xuqiu"><img src="images/help.png"></a>
+			</div>
+
+			<!--保险种类列表-->
+			<div class="h_xiuqiu" id="navUl"></div>
+
+			<div class="kong">
+				<span class="h_pianhao_title">日常最爱</span>
+			</div>
+			<div class="h_pianhao">
+				<div class="brd_ph">
+					<img src="images/hx_pipai.png">
+					<span class="brd_ph_sp">品牌偏好</span>
+					<ul id="brdUl" class="brd_ph_ul">
+
+					</ul>
+				</div>
+				<div class="h_Title_h"></div>
+
+				<div class="xingqu_ph">
+					<img src="images/hx_xingqu.png">
+					<span class="xingqu_ph_sp">兴趣偏好</span>
+					<ul id="readUl" class="brd_ph_ul">
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="kong" id="fly-title">
+				<span class="h_hangxing_title">航旅情况</span>
+			</div>
+
+			<div class="h_hangxing" id="fly-content">
+				<div class="fly_num">
+					<img src="images/hx_fly.png"><br> 用户年内飞行次数
+					<div class="fly_number"></div>
+				</div>
+				<div class="fly_level">
+					<img src="images/hx_cabin.png"><br> 舱位等级
+					<div class="fly_level_num">
+						<div>普通舱<span class="second-class"></span>次</div>
+						<div>商务头等舱<span class="first-class"></span>次</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="hiddenDivD" style="display:none;">
+				<div class="errorText">
+					<span class="errorImg"><img src="images/wrong2.png" /></span>
+					<span class="errorInfo">系统正在建设中.....</span>
+				</div>
+				<button class="errorBtn">确定</button>
+			</div>
+
+		</div>
+
+		<footer class="footerH">
+		</footer>
+
+		<div class="bg" style="display:none;"></div>
+		<!--遮罩-->
+		<div class="bg_content_nochecked" style="display: none;">
+		</div>
+		<!--session为空,请重新登录-->
+		<div class="content_session content_sessionNull" style="display: none;">
+			<div class="warning"><img src="images/login_fail.png"></div>
+			<p>您的登录状态已改变，请重新登录。</p>
+			<button class="finish_sure">重新登录</button>
+		</div>
+		<!--账号已在其他设备上登录-->
+		<div class="content_session content_other" style="display: none;">
+			<div class="warning"><img src="images/login_fail.png"></div>
+			<p>您的账号已在其他设备上登录，请在本设备上重新登录。</p>
+			<button class="finish_sure">重新登录</button>
+		</div>
+		<!--722内部错误-->
+		<div class="content_session content_contact" style="display: none;">
+			<div class="warning"><img src="images/warning.png"></div>
+			<p>程序似乎出了点问题，程序员君在玩命修复中...</p>
+			<button class="contact">联系我们</button>
+			<button class="cancel">取消</button>
+		</div>
+
+		<script type="text/javascript" src="plugins/underscore-min.js"></script>
+		<script data-main="./init/huaxiang.js" src="./vendor/require.min.js"></script>
+	</body>
+
+</html>

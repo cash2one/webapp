@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+    
+		<script>
+		
+		var c=window.screen.width;
+		
+		if(c!=720){
+			if(c>720){
+				var prt=0.5;
+			}else{
+				var prt=c/720;
+			}
+		}else{
+			var prt=0.5;
+		}
+		document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+		
+	</script>
+	
+	<title>融e保</title>
+	<link type="text/css" href="css/css.css" rel="stylesheet" />
+	<script src="js/zepto.min.js" language="javascript" type="text/javascript"></script>
+	<script type="text/javascript" src="plugins/underscore-min.js"></script>
+	<style>
+		body{
+			background: #fff;
+		}
+	</style>
+	
+	<script>
+		
+		var storage = window.localStorage; 
+
+		if(storage.getItem("flag")!=null && storage.getItem("flag")==2){
+			window.location.href="login.html";
+		}
+
+	</script>
+</head>
+
+<body>
+
+		<header class="headerR">
+		
+			<ul>
+				<li class="back"><a href="huaxiang.html"></a></li>
+				<li class="shuxian"></li>
+				<li class="wenzi"><span>详细资料</span></li>
+			</ul>
+			
+			
+			<script>
+				
+				function getByClass(sClass){
+					var aResult=[];
+					var aEle=document.getElementsByTagName('*');
+				   
+					for(var i=0;i<aEle.length;i++){
+						/*将每个className拆分*/
+						var arr=aEle[i].className.split(/\s+/);
+						for(var j=0;j<arr.length;j++){
+							/*判断拆分后的数组中有没有满足的class*/
+							if(arr[j]==sClass){
+								aResult.push(aEle[i]);
+							}
+						}
+					}
+					return aResult;
+				};
+
+				var lc=window.location.href;
+				if(lc.indexOf('?')!=-1){
+					var tid=parseInt(lc.split("time_id=")[1]);
+				}
+				getByClass('back')[0].getElementsByTagName('a')[0].href="huaxiang.html?time_id="+tid;
+
+			</script>
+		</header>
+
+		<header class="headerR_under"></header>
+
+		<div class="contentD">
+			<div class="xuqiuLogo">
+				<div id="navUl" class="clearfix">
+					
+				</div>
+			
+			<script>
+			
+				function getByClass(sClass){
+					var aResult=[];
+					var aEle=document.getElementsByTagName('*');
+				   
+					for(var i=0;i<aEle.length;i++){
+						/*将每个className拆分*/
+						var arr=aEle[i].className.split(/\s+/);
+						for(var j=0;j<arr.length;j++){
+							/*判断拆分后的数组中有没有满足的class*/
+							if(arr[j]==sClass){
+								aResult.push(aEle[i]);
+							}
+						}
+					}
+					return aResult;
+				};
+			
+				
+				var lc=window.location.href;
+				if(lc.indexOf('?')!=-1){
+					var _type=parseInt(lc.split("=")[1]);
+				}
+				
+				var ls=getByClass("normal_X");
+				
+				for(var i=0;i<ls.length;i++){
+					var typeId=_type-1;
+					
+					if(typeId==i){
+						ls[i].className="active_X";
+//						ls[i].getElementsByTagName('span')[0].getElementsByTagName('img')[0].style.display="block";
+//						ls[i].getElementsByTagName('span')[0].getElementsByTagName('img')[1].style.display="none";
+						ls[i].getElementsByTagName('span')[1].className="normal_X2 active_X2";
+					}else{
+						ls[i].className="normal_X";
+//						ls[i].getElementsByTagName('span')[0].getElementsByTagName('img')[0].style.display="none";
+//						ls[i].getElementsByTagName('span')[0].getElementsByTagName('img')[1].style.display="block";
+						ls[i].getElementsByTagName('span')[1].className="normal_X2";
+					}
+					
+						
+				}
+				
+			</script>
+
+			</div>
+
+			<div class="details">
+				<div class="details1">
+					<div class="details1Title">
+						<img src="images/d2.png">
+						<span>购买记录</span>
+				    </div>
+					
+					<div class="details2">
+						<ul id="buyUl" class="clearfix">
+							<li class="brdLi"><span></span></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="details1">
+					<div class="details1Title">
+						<img src="images/d4.png">
+						<span>消费分析</span>
+				    </div>
+
+					<div class="details3">
+						<ul class="normal" style="display:block;">
+							<li class="details3L">
+								<span class="details3Wenzi">浏览次数</span>
+								<span class="details3Prc" id="payNum"></span>
+							</li>
+							
+							<li class="details3S"></li>
+							<li class="details3L">
+								<span class="details3Wenzi">消费次数</span>
+								<span class="details3Prc" id="paySort"></span>
+							</li>
+							
+							<li class="details3S"></li>
+							<li class="details3L">
+								<span class="details3Wenzi">消费金额排名</span>
+								<img src="images/top.png" id="top-list" style="display: none">
+								<span class="details3Prc" id="scanNum"></span>
+							</li>
+						</ul>
+						
+
+						<!--<ul class="fly" style="display:none;">
+							<li class="details3f">
+								<span class="details3Wenzi">国内飞行次数</span>
+								<span class="details3Prc" id="home">0</span>
+							</li>
+							
+							<li class="details3S"></li>
+							<li class="details3f">
+								<span class="details3Wenzi">国际飞行次数</span>
+								<span class="details3Prc" id="abroad">0</span>
+							</li>
+
+						</ul>-->
+					</div>
+				</div>
+					
+					<script>
+						function getByClass(sClass){
+								var aResult=[];
+								var aEle=document.getElementsByTagName('*');
+							   
+								for(var i=0;i<aEle.length;i++){
+									/*将每个className拆分*/
+									var arr=aEle[i].className.split(/\s+/);
+									for(var j=0;j<arr.length;j++){
+										/*判断拆分后的数组中有没有满足的class*/
+										if(arr[j]==sClass){
+											aResult.push(aEle[i]);
+										}
+									}
+								}
+							return aResult;
+						};
+					</script>
+				</div>
+			</div>
+		</div>
+			
+			
+
+		<footer class="footerD">
+		</footer>
+		<!--遮罩-->
+		<div class="bg_content_nochecked" style="display: none;">
+		</div>
+		<!--session为空,请重新登录-->
+		<div class="content_session content_sessionNull" style="display: none;">
+			<div class="warning"><img src="images/login_fail.png"></div>
+			<p>您的登录状态已改变，请重新登录。</p>
+			<button class="finish_sure">重新登录</button>
+		</div>
+		<!--账号已在其他设备上登录-->
+		<div class="content_session content_other" style="display: none;">
+			<div class="warning"><img src="images/login_fail.png"></div>
+			<p>您的账号已在其他设备上登录，请在本设备上重新登录。</p>
+			<button class="finish_sure">重新登录</button>
+		</div>
+		<!--722内部错误-->
+		<div class="content_session content_contact" style="display: none;">
+			<div class="warning"><img src="images/warning.png"></div>
+			<p>程序似乎出了点问题，程序员君在玩命修复中...</p>
+			<button class="contact">联系我们</button>
+			<button class="cancel">取消</button>
+		</div>
+
+	<script data-main="./init/detail.js" src="./vendor/require.min.js"></script>
+</body>
+</html>

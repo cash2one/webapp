@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户反馈</title>
+    <script>
+        var c = window.screen.width;
+        if (c != 720) {
+            if (c > 720) {
+                var prt = 0.5;
+            } else {
+                var prt = c / 720;
+            }
+        } else {
+            var prt = 0.5;
+        }
+        document.write('<meta name="viewport" content="width=device-width, initial-scale=' + prt + ', maximum-scale=' + prt + ', minimum-scale=' + prt + '" />');
+    </script>
+    <link rel="stylesheet" href="./src/fankui/index.css"/>
+    <link rel="stylesheet" href="./src/dialog/index.css"/>
+    <script>
+        var storage = window.localStorage;
+        if (storage.getItem("flag") != null && storage.getItem("flag") == 2) {
+            window.location.href = "login.html";
+        }
+    </script>
+    <script type="text/javascript" src="./plugins/zepto.min.js"></script>
+    <script type="text/javascript" src="./plugins/underscore-min.js"></script>
+    <!--<script type="text/javascript" src="./js/BrCordova.js"></script>-->
+</head>
+<body>
+
+<header class="headerX">
+    <ul>
+        <li class="back"><a href="javascript:history.back();"></a></li>
+        <li class="shuxian"></li>
+        <li class="wenzi"><span>用户反馈</span></li>
+        <li class="tijiao">提交</li>
+    </ul>
+</header>
+
+<header class="headerX_under"></header>
+
+<div class="fk_text">
+    <div class="fk_title">
+        <span>问题详情</span>
+    </div>
+    <textarea id="form_fk" name="context" placeholder="请描述你遇到的问题，我们会仔细聆听">
+
+    </textarea>
+</div>
+
+<div class="fk_lxfs">
+    <div class="fk_title">
+        <span>联系方式</span>
+    </div>
+    <input class="fk_wb" name="contact" type="text" placeholder="电子邮箱、手机号或QQ"/>
+</div>
+
+<script type="text/javascript" data-main="./src/fankui/index.js" src="./vendor/require.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+#car-pop-mask{
+    display:block;
+    width:100%;
+    height:100%;
+    background:#000;
+    z-index: 999999;
+    position:absolute;
+    position:fixed;
+    top:0;
+    left:0;
+}
+
+
+.car-popup {
+    display: block;
+    width: 715px;
+    height: 491px;
+    padding: 10px 10px 30px;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -webkit-transition: all  0.20s  ease-in-out;
+    transform:scale(1);
+    transition: all 0.20s  ease-in-out;
+    position: absolute;
+    z-index: 1000000;
+    top: 50%;
+    left: 50%;
+    margin: 0px auto;
+    background: #fff;
+    color:#555;
+    box-shadow:1px 1px 1px #777;
+    -webkit-box-shadow:1px 1px 1px #777;
+}
+.car-popup >* {
+color:inherit;
+}
+.car-popup a{text-decoration: none;}
+
+.car-popup.hidden {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    top: 50%;
+    left: 50%;
+    margin: 0px auto;
+}
+
+.car-popup>header{
+
+    font-size:16px;
+    margin:0;
+    padding:0;
+    background: #eee;
+    color: #888;
+    height: 30px;line-height: 30px;text-indent: 10px;
+}
+
+.car-popup>div{
+	width: 85%;
+    font-size:14px;
+    margin: 65px auto 45px;
+    line-height: 1.8;
+}
+
+.car-popup>footer{
+    width:80%;
+    text-align:center;
+    display:block !important;
+    
+    margin: 10px auto;
+}
+
+.car-popup .car-popup-cancel,.car-popup .car-popup-ok{
+    float:right;
+    width: 240px;
+    height: 68px;
+    background: #a4aab0;
+    color:#fff;
+    font-size: 32px;
+    line-height: 68px;
+    -moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	vertical-align: middle;
+}
+
+.car-popup .car-popup-ok{
+    float:left;
+    background: #F04E30;
+    color: #fff;
+}
+
+.car-popup a.center{
+    float:none!important;
+    width:100%;
+    margin:auto;
+    display: block;
+}
+
+.alertTextArea{
+    width: 611px;
+    height: 295px;
+    color: #7f878f;
+    font-size: 28px;
+    border: 1px solid #cdcdcd;
+    resize: none;
+    font-family: DSF;
+    background-color: #fff;
+}
+/*删除确认*/
+
+.divCenter{
+    width: 611px;
+    height: 295px;
+    color: #7F878F;
+    font-size: 28px;
+    border: 1px solid #cdcdcd;
+    resize: none;
+}
+
+
+

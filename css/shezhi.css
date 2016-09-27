@@ -1,0 +1,442 @@
+@font-face {
+    font-family:DSF;
+    src: url(dsf.TTF);
+}
+body{
+    font-family:DSF;
+    font-size:100%;  
+    background-color:#fafafa;
+}
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    -webkit-text-size-adjust:none;
+    height: 100%;
+}
+ul li{
+    list-style:none;
+}
+a{
+    color:#333;
+    text-decoration:none;
+}
+button{
+    border: none;
+}
+
+
+
+
+/*==========================================shezhi================================================*/
+
+
+/*headerR
+==========================================================================*/
+.headerR{
+    width:100%;
+    height:96px;
+    overflow:hidden;
+    margin:0 auto;
+    background-color:#3e454d;
+    position: fixed;
+    top: 0;
+}
+.headerR_under{
+	z-index:-1;
+    width:100%;
+    height:96px;
+    position: relative;
+    top: 0;
+}
+.headerR ul{
+    width:100%;
+}
+.headerR ul li{
+    list-style:none;
+    float:left;
+}
+.back{
+    margin-left:5%;
+    margin-top:30px;
+    background-image: url(../images/fanhui.png);
+    width:32px;
+    height:32px;
+}
+	.back a{
+		display:block;
+		width:100%;
+		height:100%;
+	}
+.shuxian{
+    height:40px;
+    margin-top:28px;
+    background-color:#21262b;
+}
+.wenzi{
+    margin-left:5%;
+    margin-top:30px;
+    height:36px;
+    line-height:36px;
+    color:#fafafa;
+    font-size:36px;
+}
+
+.headerR .sale_nav{
+    width: 622px;
+    margin: 0 auto;
+}
+.headerR .sale_nav li{
+    margin-left: 0;
+}
+/*contentR
+===============================================================================*/
+.r_ipt1{
+    width: 85%;
+    margin:0 auto;
+    height:120px;
+    line-height:120px;
+    border-bottom:1px #cbced1 solid;
+}
+.jianke{
+    height: 8px;
+    background-color: #f0f0f0;
+    margin-bottom: 28px;
+}
+.contentR a:visited {
+	border-bottom:1px #dbdcde solid;
+}  /* 已访问的链接 */
+
+.r_iptspan{
+    font-size:32px;
+    color: #21262b;
+}
+.tel{
+    font-size:32px;
+    color: #7f878f;
+    margin-left: 5%;
+}
+.next{
+    width: 16px;
+    height: 32px;
+    background: url("../images/next.png") no-repeat;
+    float: right;
+    margin-right: 5%;
+    margin-top: 44px;
+}
+.r_ipt1 .banben,.r_ipt1 .jifen{
+    float: right;
+    margin-right:5%;
+    font-size:32px;
+    color: #a4aab0;
+}
+.qiandao{
+    position: relative;
+}
+.r_ipt1 .jifen{
+    font-size: 28px;
+    color: #f04e30;
+    position: absolute;
+    bottom: -45px;
+    right: 0;
+    opacity: 0;
+}
+/*footer
+==============================================================================*/
+.exit{
+    width:85%;
+    margin: 20px auto 143px;
+}
+.exit button{
+    font-family:DSF;
+    width:100%;
+    height:88px;
+    color:#f0f0f0;
+    line-height:88px;
+    font-size:36px;
+    background-color:#f04e30;
+    border:0px;
+    outline:none;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius:5px;
+    display: block;
+}
+
+.footer_pipei{
+    width: 720px;
+    height: 122px;
+    background-color: white;
+    border-top: 1px solid #cbced1;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    font-size: 28px;
+}
+/*.footer_pipei .menu_sale{
+    background:url(../images/menu_sale_off.png) no-repeat 108px 15px;
+}*/
+.footer_pipei .menu_pipei{
+    background:url(../images/menu_pipei_off.png) no-repeat 108px 15px;
+}
+.footer_pipei .menu_zhanghu{
+    background:url(../images/menu_zhanghu_off.png) no-repeat  103px 15px;
+}
+.footer_pipei .menu_more{
+    background:url(../images/menu_more_off.png) no-repeat 59px 15px;
+}
+/*.footer_pipei .selected .menu_sale{
+    background:url(../images/menu_sale_on.png) no-repeat 64px 15px;
+}*/
+.footer_pipei .selected .menu_pipei{
+    background:url(../images/menu_pipei_on.png) no-repeat  108px 15px;
+}
+.footer_pipei .selected .menu_zhanghu{
+    background:url(../images/menu_zhanghu_on.png) no-repeat  103px 15px;
+}
+.footer_pipei .selected .menu_more{
+    background:url(../images/menu_more_on.png) no-repeat  59px 15px;
+}
+.footer_pipei ul li{
+    float: left;
+}
+.footer_pipei a{
+    display: inline-block;
+    color: #5d656e;
+    width: 260px;
+    line-height: 28px;
+    padding: 80px 0 15px;
+    text-align: center;
+}
+footer li:last-child a{
+    width: 170px;
+}
+.footer_pipei  .selected a{
+    color: #bd3c26;
+}
+
+/*======================================guodu====================================================*/
+
+
+.wrap{
+    width: 100%;
+    height: 100%;
+    background:-webkit-radial-gradient(#f4f5f5, #cccfd2, #aeb2b7) no-repeat;
+    background:-moz-radial-gradient(#f4f5f5, #cccfd2, #aeb2b7) no-repeat;
+}
+.logo{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-0%);
+    -moz-transform: translate(-50%,-0%);
+}
+.wrap .banben{
+    font-size: 28px;
+    font-family: DSF;
+    color: #7f878f;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-0%);
+    -moz-transform: translate(-50%,-0%);
+}
+
+
+/*========================================help===================================================*/
+
+
+.content_help{
+    width: 600px;
+    margin: 60px auto 0;
+}
+.help_list>li{
+    padding-bottom: 36px;
+    margin-bottom: 36px;
+    border-bottom:1px #cbced1 solid;
+}
+.help_list .help_login{
+    margin-bottom: 0px;
+    border: none;
+}
+.help_list li img{
+    float: left;
+    margin-right: 8px;
+}
+.help_list li div{
+    line-height: 52px;
+    font-size: 32px;
+    color: #333333;
+}
+.help_list>li>ul>li{
+    font-size: 28px;
+    color: #999999;
+    padding-left: 60px;
+}
+.help_up{
+    display: inline-block;
+    width: 28px;
+    height: 15px;
+    background: url("../images/help_close.png");
+    float: right;
+    margin-top: 18px;
+    margin-right: 25px;
+}
+.help_kong{
+    height: 30px;
+    background-color: #eeeeee;
+}
+.content_help_bottom{
+    margin-top: 36px;
+}
+.help_list .help_second{
+    font-size: 24px;
+    color: #5a5a5a;
+    padding: 36px 0;
+    border-bottom: 1px solid #cbced1;
+}
+.help_list .help_second div{
+    font-size: 30px;
+    line-height: 33px;
+    color: #3c3c3c;
+    border-left: 8px solid #f14d31;
+    margin-bottom: 36px;
+}
+.fengexian,.fengexian01{
+    height: 36px;
+    border-bottom: 1px solid #cbced1;
+    margin-left: -60px;
+}
+.fengexian01{
+    margin-left: 0px;
+}
+.help_list .help_huaxiang{
+    border-bottom-width: 0;
+    padding-bottom: 0px;
+}
+
+
+/*========================================about==============================================*/
+
+
+.content_about{
+    width: 600px;
+    margin: 60px auto 0;
+}
+/*浮动占位*/
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+}
+.clearfix{
+    overflow:hidden;
+    *zoom:1;
+}
+.content_about_right{
+    float: right;
+    width: 540px;
+}
+.erweima{
+    text-align: center;
+    color: #3c3c3c;
+    font-size: 28px;
+    margin-top: 100px;
+}
+.about_title{
+    color: #f04e30;
+    font-size: 32px;
+}
+.about_banben{
+    font-size: 28px;
+    color: #a4aab0;
+    margin-left: 10px;
+}
+.about_wenzi{
+    color: #666666;
+    font-size: 28px;
+}
+.about_footer{
+    width: 85%;
+    color: #979797;
+    font-size: 28px;
+    position: absolute;
+    bottom: 2%;
+    text-align: center;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+}
+
+
+/*=========================================xieyi===============================================*/
+
+
+.xieyi_content{
+    margin: 0 auto;
+    width: 600px;
+    color: #666666;
+    font-size: 28px;
+    padding-bottom: 50px;
+}
+.xieyi_title{
+    width: 600px;
+    margin: 60px auto 0;
+}
+
+
+/*====================================================session为空遮罩==================================================*/
+.bg_content_nochecked{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62,69,77,0.5);
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+/*================================session为空,请重新登录=================================*/
+.content_session{
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    position: fixed;
+    top: 156px;
+    left: 50%;
+    -webkit-transform: translate(-50%,-0%);
+    -moz-transform: translate(-50%,-0%);
+    z-index: 13;
+    font-size: 28px;
+}
+.warning{
+    text-align: center;
+    margin: 98px auto 30px;
+}
+.content_session p {
+    color: #21262b;
+    padding: 0 42px;
+    text-align: center;
+}
+.content_session button{
+    width: 200px;
+    height: 68px;
+    color: white;
+    font-size: 32px;
+    background-color: #f04e30;
+    border-radius: 7px;
+    margin: 25px 150px 30px          ;
+}
+.content_session .contact{
+    margin-left: 40px;
+    margin-right: 0px;
+}
+.content_session .cancel{
+    margin-left: 20px;
+    margin-right: 0;
+    background-color: #a4aab0;
+}

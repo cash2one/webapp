@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>融e保</title>
+	<script src="js/zepto.min.js" language="javascript" type="text/javascript"></script>
+	
+    <script>
+		
+		var c=window.screen.width;
+		
+		if(c!=720){
+			if(c>720){
+				var prt=0.5;
+			}else{
+				var prt=c/720;
+				
+				
+			}
+		}else{
+			var prt=0.5;
+		}
+		
+		document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+
+	</script>
+	
+	<script>
+		
+		var storage = window.localStorage; 
+
+		if(storage.getItem("flag")!=null && storage.getItem("flag")==2){
+			window.location.href="login.html";
+		}
+
+	</script>
+	<!--顶层页面返回键-->
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script>
+		document.addEventListener("backbutton",onBackKeyDown,false);
+		function onBackKeyDown(){  navigator.app.exitApp();  }
+	</script>
+
+	<link href="css/shezhi.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<header class="headerR" style="z-index: 1">
+	<ul class="sale_nav">
+		<li class="wenzi"><span id="title">更多</span></li>
+	</ul>
+</header>
+<header class="headerR_under"></header>
+
+<div class="contentR">
+
+    <div class="r_ipt1" style="border:none;">
+        <span class="r_iptspan">账号：</span>
+        <span class="tel"></span>
+    </div>
+
+	<div class="jianke"></div>
+
+	<div class="r_ipt1 qiandao">
+		<span class="r_iptspan">签到</span>
+		<span class="jifen">+5积分</span>
+	</div>
+
+	<a href="getBackPwd.html?flag=1" style="display: block;">
+		<div class="r_ipt1">
+			<span class="r_iptspan">修改密码</span>
+			<span class="next"></span>
+		</div>
+	</a>
+
+    <a href="help.html" style="display: block;">
+        <div class="r_ipt1">
+            <span class="r_iptspan">帮助中心</span>
+            <span class="next"></span>
+        </div>
+    </a>
+    
+    <a href="fankui.html" style="display: block;">
+    	<div class="r_ipt1" style="border: none;">
+    		<span class="r_iptspan">用户反馈</span>
+    		<span class="next"></span>
+    	</div>
+    </a>
+
+	<div class="jianke jianke01"></div>
+
+    <a href="xieyi.html?flag=4" style="display: block;">
+        <div class="r_ipt1">
+            <span class="r_iptspan">融e保服务协议</span>
+            <span class="next"></span>
+        </div>
+    </a>
+
+	<div class="r_ipt1">
+		<span class="r_iptspan">当前版本</span>
+		<span class="banben">V1.1</span>
+	</div>
+
+    <a href="about.html" style="display: block;">
+        <div class="r_ipt1">
+            <span class="r_iptspan">关于</span>
+            <span class="next"></span>
+        </div>
+    </a>
+</div>
+
+<footer class="exit">
+    <button class="exitBtn">退出登录</button>
+</footer>
+
+<footer class="footer_pipei">
+	<ul>
+		<!--<li>
+			<a href="saleXiansuo.html" class="menu_sale">销售线索</a>
+		</li>-->
+		<li>
+			<a href="main.html" class="menu_pipei">客户画像</a>
+		</li>
+		<li>
+			<a href="zhanghu.html" class="menu_zhanghu">账户</a>
+		</li>
+		<li  class="selected">
+			<a href="shezhi.html" class="menu_more">更多</a>
+		</li>
+	</ul>
+</footer>
+
+<!--遮罩-->
+<div class="bg_content_nochecked" style="display: none;">
+</div>
+<!--session为空,请重新登录-->
+<div class="content_session content_sessionNull" style="display: none;">
+	<div class="warning"><img src="images/login_fail.png"></div>
+	<p>您的登录状态已改变，请重新登录。</p>
+	<button class="finish_sure">重新登录</button>
+</div>
+<!--账号已在其他设备上登录-->
+<div class="content_session content_other" style="display: none;">
+	<div class="warning"><img src="images/login_fail.png"></div>
+	<p>您的账号已在其他设备上登录，请在本设备上重新登录。</p>
+	<button class="finish_sure">重新登录</button>
+</div>
+<!--722内部错误-->
+<div class="content_session content_contact" style="display: none;">
+	<div class="warning"><img src="images/warning.png"></div>
+	<p>程序似乎出了点问题，程序员君在玩命修复中...</p>
+	<button class="contact">联系我们</button>
+	<button class="cancel">取消</button>
+</div>
+<script>
+	function getByClass(sClass){
+		var aResult=[];
+		var aEle=document.getElementsByTagName('*');
+   
+		for(var i=0;i<aEle.length;i++){
+			var arr=aEle[i].className.split(/\s+/);
+			for(var j=0;j<arr.length;j++){
+				if(arr[j]==sClass){
+					aResult.push(aEle[i]);
+				}
+			}
+		}
+		return aResult;
+	};
+
+
+
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+
+	
+	
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1);
+			if (c.indexOf(name) != -1) 
+			return c.substring(name.length, c.length);
+		}
+		return "";
+	}
+	
+
+	function clearCookie(name) {  
+		setCookie(name, "", -1);  
+	}  
+
+	var storage = window.localStorage; 
+						
+						
+						
+	if(storage.getItem("uid")!=null){
+		var ccc=storage.getItem("uid");
+	}
+	
+	if(ccc){
+//		getByClass('tel')[0].innerHTML=ccc.substring(0,3)+' '+ccc.substring(3,7)+' '+ccc.substring(7,11)
+		getByClass('tel')[0].innerHTML=ccc.substring(0,3)+' '+'****'+' '+ccc.substring(7,11)
+	}
+
+	var isIOS = (/iphone|ipad/gi).test(navigator.appVersion);
+	if(isIOS){
+		document.getElementsByClassName("footer_pipei")[0].style.bottom="20px";
+//		document.getElementsByClassName("exit")[0].style.marginBottom="193px";
+		document.getElementsByClassName("exit")[0].style.paddingBottom="30px";
+	}
+</script>
+
+<script src="js/yanzheng.js" language="javascript" type="text/javascript"></script>
+</body>
+</html>

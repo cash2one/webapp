@@ -1,0 +1,297 @@
+body{
+    background-color: #ffffff;
+}
+footer{
+    background-color: #f0f0f0;
+}
+.tab{
+    position: fixed;
+    top: 96px;
+    z-index: 10;
+    background-color: #ffffff;
+}
+.tab_menu li{
+    float: left;
+    font-size: 32px;
+    padding-top: 100px;
+    padding-bottom: 8px;
+}
+.zhulibi{
+    padding-left: 162px;
+    background:#a4aab0 url(../../images/zhanghu_off.png) no-repeat 175px 22px;
+    color: #ffffff;
+    width: 198px;
+}
+.zhulibi.curr{
+    color: #5d656e;
+    background-color: #fff;
+    background-image: url(../../images/zhanghu_on.png);
+}
+.jifen{
+    padding-left: 89px;
+    background:#a4aab0 url(../../images/jifen_off.png) no-repeat 116px 22px;
+    color: #ffffff;
+    width: 271px;
+}
+.jifen.curr{
+    color: #5d656e;
+    background-color: #fff;
+    background-image: url(../../images/jifen_on.png);
+}
+.zhulibi_num{
+    width: 166px;
+    height: 166px;
+    border: 8px solid #f04e30;
+    border-radius: 91px;
+    color: #f04e30;
+    text-align: center;
+    margin: 60px auto 25px;
+}
+.zhulibi_num >div:first-child{
+    margin: 25px auto 20px;
+    line-height: 28px;
+}
+.zhulibi_num div:last-child{
+    text-align: center;
+}
+/*浮动占位*/
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+}
+.clearfix{
+    overflow:hidden;
+    *zoom:1;
+}
+.coin{
+    float: left;
+}
+.money_zhulibi,.money_jifen{
+    float: left;
+}
+.zhuanghu_btn{
+    width: 234px;
+    height: 90px;
+    background-color: #f04e30;
+    color: #fefefe;
+    font-size: 32px;
+    border-radius: 7px;
+    margin-left: 243px;
+    margin-bottom: 45px;
+}
+.zhulibi_help{
+    height: 50px;
+    background-color: #f0f0f0;
+    color: #3e454d;
+    text-align: center;
+    line-height: 50px;
+}
+.zhulibi_help a{
+    position: relative;
+    top: 3px;
+    left: 13px;
+}
+.zhanghu_info li{
+    padding: 20px 60px 30px;
+    border-bottom: 1px solid #ced1d4;
+    color: #21262b;
+    font-size: 32px;
+}
+.zhanghu_info li p:first-child{
+    line-height: 32px;
+}
+.zhanghu_info li p:last-child{
+    height: 24px;
+    line-height: 24px;
+    margin-top: 15px;
+}
+.zhanghu_date{
+    color: #7f878f;
+    font-size: 24px;
+}
+.huafei_jian{
+    font-size: 36px;
+    float: right;
+    margin-top: -10px;
+}
+.huafei_add{
+    font-size: 36px;
+    float: right;
+    margin-top: -10px;
+    color: #f04e30;
+}
+.content_hide{
+    display: none;
+}
+/*===========================================================遮罩=====================================================*/
+.bg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62,69,77,0.5);
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+/*================================session为空,请重新登录=================================*/
+.content_session{
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    position: fixed;
+    top: 156px;
+    left: 50%;
+    -webkit-transform: translate(-50%,-0%);
+    -moz-transform: translate(-50%,-0%);
+    z-index: 13;
+    font-size: 28px;
+}
+.warning{
+    text-align: center;
+    margin: 98px auto 30px;
+}
+.content_session p {
+    color: #21262b;
+    padding: 0 42px;
+    text-align: center;
+}
+.content_session button{
+    width: 200px;
+    height: 68px;
+    color: white;
+    font-size: 32px;
+    background-color: #f04e30;
+    border-radius: 7px;
+    margin: 25px 150px 30px;
+}
+.content_session .contact{
+    margin-left: 40px;
+    margin-right: 0px;
+}
+.content_session .cancel{
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+
+/*上滑翻页*/
+#wrapper {
+    position:absolute;
+    z-index:1;
+    top:699px;
+    bottom:123px;
+    left:-9999px;
+    width:100%;
+}
+
+#scroller {
+    position:absolute;
+    z-index:2;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width:100%;
+    padding-bottom:0;
+}
+#pullDown, #pullUp {
+    background:#fff;
+    height:40px;
+    line-height:40px;
+    color:#888;
+}
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+    display:block;
+    float:left;
+    width:40px; height:40px;
+    background:url(../../pull-icon@2x.png) 0 0 no-repeat;
+    -webkit-background-size:40px 80px; background-size:40px 80px;
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-duration:250ms;
+}
+#pullDown .pullDownIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+#pullUp .pullUpIcon  {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+    from { -webkit-transform:rotate(0deg) translateZ(0); }
+    to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+
+#wrapper1 {
+    position:absolute;
+    z-index:1;
+    top:699px;
+    bottom:123px;
+    left:-9999px;
+    width:100%;
+}
+
+#scroller1 {
+    position:absolute;
+    z-index:1;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width:100%;
+    padding-bottom:0px;
+}
+#pullDown1, #pullUp1 {
+    background:#fff;
+    height:40px;
+    line-height:40px;
+    color:#888;
+}
+#pullDown1 .pullDownIcon, #pullUp1 .pullUpIcon  {
+    display:block;
+    float:left;
+    width:40px; height:40px;
+    background:url(../../pull-icon@2x.png) 0 0 no-repeat;
+    -webkit-background-size:40px 80px; background-size:40px 80px;
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-duration:250ms;
+}
+#pullDown1 .pullDownIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+#pullUp1 .pullUpIcon  {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown1.flip .pullDownIcon {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp1.flip .pullUpIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown1.loading .pullDownIcon, #pullUp1.loading .pullUpIcon {
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}

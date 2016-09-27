@@ -1,0 +1,213 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+html,body{
+	-webkit-text-size-adjust:none;
+	font-family:'微软雅黑';
+}
+
+ul li{
+	list-style:none;
+}
+
+
+a{
+	color:#333;
+	text-decoration:none;
+}
+
+.clear{ clear:both} 
+
+
+
+
+#content{
+	  background-color: #fcfcfc;
+}
+
+header{
+	width:100%;
+	min-width:1280px;
+	height:77px;
+	background-color:#21262b;
+	border-bottom:3px solid #3a8cc2;
+}
+	.head_bg{
+		width:1280px;
+		margin:0 auto;
+	}
+		.head_bg img {
+			margin-left:130px;
+			margin-top:20px;
+		}
+	
+	.content1{
+		height:599px;
+		background-color:#000001;
+		width:100%;
+		min-width:1280px;
+	}
+		.content_bg{
+			width:1280px;
+			margin: 0 auto;
+			position:relative;
+		}
+			.content_bg_1{
+				position:absolute;
+				left:660px;
+				top:205px;
+			}
+			.content_bg_2{
+				width:569px;
+				height:108px;
+				position:absolute;
+				left:570px;
+				top:366px;
+				
+			}
+				.iphone_1{
+					width:150px;
+					height:101px;
+					margin-top:7px;
+					float:left;
+				}
+					.iphone_p1{
+						display:block;
+						height:50px;
+						width:150px;
+						background-color:#f7941d;
+					   -moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						border-radius:5px;
+					}
+						.iphone_s1{
+							display:block;
+							width:21px;
+							height:24px;
+							padding-left:18px;
+							padding-top:12px;
+							float:left;
+						}
+						.iphone_s2{
+							display:block;			
+							height:24px;
+							float:left;
+							padding-left:8px;
+							padding-top:12px;
+							color:#ffffff;
+							font-size:20px;
+						}
+						
+					.iphone_p2{
+						display:block;
+						margin-left:15px;
+						margin-top:14px;
+						line-height:17px;
+						font-size:14px;
+						color:#ffffff;
+					}
+					
+					
+				.iphone_2{
+					width:108px;
+					height:108px;
+					margin-left:11px;
+					background-color:#ffffff;
+					float:left;
+				}
+					.iphone_2 img{
+						margin:7px 7px;
+					}
+				.android_1{
+					width:150px;
+					height:108px;
+					float:left;
+					margin-left:31px;
+					margin-top:7px;
+				}
+				.android_2{
+					width:108px;
+					height:108px;
+					float:left;
+					margin-left:11px;
+					background-color:#ffffff;
+				}
+					.android_2 img{
+						margin:7px 7px;
+					}
+				
+		
+	.content2{
+		height:699px;
+		width:100%;
+		background-color:#fcfcfc;
+		min-width:1280px;
+	}
+	
+		.content_2{
+			width:1280px;
+			margin: 183px auto;
+		}
+		
+			.pic1{
+				margin-left:157px;
+				float:left;
+			}
+			.pic2{
+				margin-left:109px;
+				float:left;
+			}
+			.pic3{
+				margin-left:109px;
+				float:left;
+			}
+				.p_wenzi{
+					margin-top:40px;
+					margin-left:78px;
+					color:#414141;
+					font-size:24px;
+				}
+		
+			
+footer{
+	width:100%;
+	height:60px;
+	background:#21262b;
+}
+	footer p{
+		
+		text-align:center;
+		color:#fcfcfc;
+		font-size:14px;
+		line-height:60px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

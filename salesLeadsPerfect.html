@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>融e保</title>
+    <link href="css/saleLeads.css" type="text/css" rel="stylesheet">
+    <link type="text/css" href="css/iscrollSalesLeads.css" rel="stylesheet" />
+    
+    <script src="js/zepto.min.js" type="text/javascript"></script>
+    <script src="js/iscroll.js" language="javascript" type="text/javascript"></script>
+    <script src="init/salesLeadsPerfect.js" type="text/javascript"></script>
+    <script src="js/popup_alert.js"></script>
+    <script>
+        var c=window.screen.width;
+        if(c!=720){
+            if(c>720){
+                var prt=0.5;
+            }else{
+                var prt=c/720;
+            }
+        }else{
+            var prt=0.5;
+        }
+        document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+    </script>
+</head>
+<body>
+<header class="headerR">
+    <ul>
+        <li class="back"><a ></a></li>
+        <li class="shuxian"></li>
+        <li class="wenzi"><span>完善销售线索</span></li>
+        <li id="btnbar-edit" class="editBar">编辑</li>
+    </ul>
+</header>
+
+
+		
+
+
+<div id="wrapper" style="top: 0px;">
+	<div id="scroller" >
+		
+		<header class="headerR_under"></header>
+		
+		<div >
+			<!--<div id="pullDown" style="display: none;">
+			    <span class="pullDownLabel">下拉刷新...</span>
+			</div>-->
+			<div id="div_component_list" class="content_sale">
+				<div id="divResultIsEmpty" style="display: none;" class="xiansuo_info">
+			    </div>
+			</div>
+			<div id="pullUp">
+				<span class="pullUpIcon"></span>
+				<span class="pullUpLabel">上拉加载更多...</span>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<!--<div class="content_sale">-->
+<div style="display: none;">
+   <div id="div-mySalesInfo" class="xiansuo_info">
+       <div class="person_info_red">
+			<span>李先生</span>&nbsp;&nbsp;<span>110340196508101320</span>
+		</div>
+		<div class="">
+			<span>投保日期：</span><span>2015年12月15日</span>
+			<!--<span   class="dataLiA"><a href="#">已联络</a></span>-->
+			<span class="right_toolbar">&nbsp;&nbsp;
+				<a href="#">
+					<img src="images/sl_edit_icn.png" />
+				</a>
+				<img src="images/sl_vline_icn.png" />
+				<a href="#">
+					<img src="images/sl_del_icn.png" />
+				</a>
+			</span>
+		</div>
+		<div>
+			<span>投保险种：</span><span>财产险</span>
+		</div>
+		<div class="">
+			<span>投保期限：</span><span>2015年12月15日~2016年12月14日</span>
+		</div>
+    </div>
+    
+  	<div class="xiansuo_info">
+       <div class="person_info_red">
+			<span>李太太</span>&nbsp;<span>    110340196508101320</span>
+		</div>
+		<div class="">
+			<span>投保日期：</span><span>2015年12月15日</span>
+			<span class="right_toolbar">&nbsp;&nbsp;
+				<a href="#">
+					<img src="images/sl_edit_icn.png" />
+				</a>
+				<img src="images/sl_vline_icn.png" />
+				<a href="#">
+					<img src="images/sl_del_icn.png" />
+				</a>
+			</span>
+		</div>
+		<div>
+			<span>投保险种：</span><span>车险</span>
+		</div>
+		<div class="">
+			<span>投保期限：</span><span>2015年3月15日~2016年3月14日</span>
+		</div>
+    </div>
+    
+    <div class="xiansuo_info">
+       <div class="person_info_red">
+			<span>李太</span>&nbsp;<span>    110340196508101320</span>
+		</div>
+		<div class="">
+			<span>投保日期：</span><span>2015年12月15日</span>
+			<span class="right_toolbar">&nbsp;&nbsp;
+				<a href="#">
+					<img src="images/sl_edit_icn.png" />
+				</a>
+				<img src="images/sl_vline_icn.png" />
+				<a href="#">
+					<img src="images/sl_del_icn.png" />
+				</a>
+			</span>
+		</div>
+		<div>
+			<span>投保险种：</span><span>车险</span>
+		</div>
+		<div class="">
+			<span>投保期限：</span><span>2015年3月15日~2016年3月14日</span>
+		</div>
+    </div>
+  
+</div>
+
+<div style="display: none;">
+	<div id="form-add" class="field">
+		<label>投保人姓名<font  color="FF0000">*</font></label>
+		<input type="text" placeholder="不能为空!" required="required">  <!--只能输入中文、英文、数字-->
+		<br>
+		<label></label><span ></span>
+		<br>
+		<label>投保人身份证号码<font  color="FF0000">*</font></label>
+		<input type="text" maxlength="18" placeholder="不能为空!">   <!--只能输入英文和数字：-->
+		<br>
+		<label></label><span ></span>
+		<br>
+		<label>投保日期<font  color="FF0000">*</font></label>
+		<input type="text" maxlength="10" placeholder="格式如2016-01-01">
+		<br>
+		<label></label><span ></span>
+		<br>
+		<label>投保险种</label>
+		<input type="text">
+		<br>
+		<label></label><span ></span>
+		<br>
+		<label>投保期限</label>
+		<input type="text" maxlength="10" style="width: 135px;" placeholder="2015-01-01">
+			<label id="connectionSymbol" style="width: 10px;">-</label>
+		<input type="text" maxlength="10" style="width: 135px;" placeholder="2015-02-01">
+		<br>
+		<label></label><span style="width: 145px;"></span><span style="width: 145px;"></span>
+		<br>
+			<div style="width: 100%; text-align: center;margin: 0px auto;">
+				<label class="label_info">完善客户的信息将会让我们更好的服务您</label>
+				<label class="label_info">同时我们将赠送您10积分</label>
+			</div>
+		<!--<input type="submit">-->
+			<!--<input type="submit" value="提交" />-->
+	</div>
+</div>
+<div style="display: none;">
+	<div id="form-1" class="divCenter">
+		<header>删除确认</header>
+		<br />
+		<img src="images/sl_prompt_icn.png" /><br /><br />
+		<span  class="divspan">是否确认删除该条记录</span>
+	</div>	
+</div>	
+<ul class="right_toolbar_add">
+	<a href="#">
+		<img id="btn-add" src="images/sl_add_icn.png" />
+		<span>添加</span>
+	</a>
+</ul>
+<!--遮罩-->
+<div class="bg" style="display: none;">
+</div>
+<!--session为空,请重新登录-->
+<div class="content_session content_sessionNull" style="display: none;">
+    <div class="warning"><img src="images/login_fail.png"></div>
+    <p>您的登录状态已改变，请重新登录。</p>
+    <button class="finish_sure">重新登录</button>
+</div>
+<!--账号已在其他设备上登录-->
+<div class="content_session content_other" style="display: none;">
+    <div class="warning"><img src="images/login_fail.png"></div>
+    <p>您的账号已在其他设备上登录，请在本设备上重新登录。</p>
+    <button class="finish_sure">重新登录</button>
+</div>
+<!--722内部错误-->
+<div class="content_session content_contact" style="display: none;">
+    <div class="warning"><img src="images/warning.png"></div>
+    <p>程序似乎出了点问题，程序员君在玩命修复中...</p>
+    <button class="contact">联系我们</button>
+    <button class="cancel_contact">取消</button>
+</div>
+    <script>
+    /*$('#btn-add').click(function(){
+	    	console.log("btn-add",$('body'))
+	        $('body').popup({
+	            title:'',//表单提交
+	            id:'pop-1'
+	            ,formId:'form-add'
+	            ,closeOnOk:false
+	            ,ok:'确认'
+	            ,onOk:function(){
+	                $('#form-add').submit();
+	            }
+	            ,cnacel:"取消"
+	            ,onCancel : function() {
+                	//alert('我是取消按钮');
+            	}
+	        });
+	        return false;
+	    });*/
+
+   
+	   /* $('#form-1').bind('submit',function(){
+	        alert('表单form-1提交');
+	        return false;
+	    });*/
+	    </script>
+</body>
+</html>

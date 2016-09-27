@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>融e保</title>
+   	<script>
+		
+		var c=window.screen.width;
+		
+		if(c!=720){
+			if(c>720){
+				var prt=0.5;
+			}else{
+				var prt=c/720;
+			}
+		}else{
+			var prt=0.5;
+		}
+		document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+
+	</script>
+	<script src="js/js.js" language="javascript" type="text/javascript"></script>
+    <script src="js/zepto.min.js" type="text/javascript"></script>
+		<script>
+		
+		var storage = window.localStorage; 
+
+		if(storage.getItem("flag")!=null && storage.getItem("flag")==2){
+			window.location.href="login.html";
+		}
+
+	</script>
+    <link href="css/shezhi.css" type="text/css" rel="stylesheet">
+    <script>
+        Zepto(function($){
+            $(".help_huaxiang").children("div").click(function(){
+                if($(this).parents("li").find("ul").css("display")=="block"){
+                    $(".fengexian01").css("display","block");
+                }else{
+                    $(".fengexian01").css("display","none");
+                }
+            });
+            $(".help_list li div").click(function(){
+                if($(this).parents("li").find("ul").css("display")=="block"){
+                    $(this).parents("li").find("ul").css("display","none");
+                    $(this).find(".help_up").css("background","url('images/help_open.png')");
+                }else{
+                    $(this).parents("li").find("ul").css("display","block");
+                    $(this).find(".help_up").css("background","url('images/help_close.png')");
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<header class="headerR">
+
+    <ul>
+        <li class="back">
+            <a href="shezhi.html"></a>
+        </li>
+        <li class="shuxian"></li>
+        <li class="wenzi"><span>帮助中心</span></li>
+    </ul>
+
+</header>
+
+<header class="headerR_under"></header>
+<script type="text/javascript">
+			function getByClass(sClass){
+				var aResult=[];
+				var aEle=document.getElementsByTagName('*');
+			   
+				for(var i=0;i<aEle.length;i++){
+					/*将每个className拆分*/
+					var arr=aEle[i].className.split(/\s+/);
+					for(var j=0;j<arr.length;j++){
+						/*判断拆分后的数组中有没有满足的class*/
+						if(arr[j]==sClass){
+							aResult.push(aEle[i]);
+						}
+					}
+				}
+				return aResult;
+			};
+			window.onload=function(){
+				
+				var lianjie=window.location.href;
+				var storage = window.localStorage; 
+				if(storage.getItem("tid")!=null){
+					var tid=storage.getItem("tid");
+				}
+
+
+				//跳转
+//                getByClass("back")[0].onclick=function(){
+//                    window.history.back();
+//                };
+//				if(lianjie.indexOf("#")!=-1){
+//					getByClass('back')[0].getElementsByTagName('a')[0].href="huaxiang.html?"+tid;
+//				}else{
+//					getByClass('back')[0].getElementsByTagName('a')[0].href="shezhi.html";
+//				}
+			}
+		</script>
+
+<div class="content_help">
+    <ul class="help_list">
+        <li>
+            <div>
+                <img src="images/help_register.png">注册
+                <span class="help_up"></span>
+            </div>
+            <ul style="display: block">
+                <li>
+                    输入您的手机号码，收取短信验证码即可完成注册。
+                </li>
+            </ul>
+        </li>
+        <li class="help_login">
+            <div>
+                <img src="images/help_login.png">登录
+                <span class="help_up"></span>
+            </div>
+            <ul style="display: block">
+                <li>
+                    使用您注册时登记的手机号码和密码登录。
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="help_kong"></div>
+<div class="content_help content_help_bottom">
+    <ul class="help_list">
+        <li>
+            <div>
+                <img src="images/help_getbackpwd.png">忘记密码
+                <span class="help_up"></span>
+            </div>
+            <ul style="display: block">
+                <li>
+                    通过注册是使用的手机号码接收验证码即可以完成密码重置操作，然后就可以用新的密码登录。
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div>
+                <img src="images/help_pipei.png">客户匹配
+                <span class="help_up"></span>
+            </div>
+            <ul style="display: block">
+                <li>
+                    在客户匹配中输入客户的姓名和手机号码（可以增加匹配条件如身份证号码或者邮箱更加准确匹配客户）就可以详细了解客户。
+                </li>
+            </ul>
+        </li>
+        <li class="help_huaxiang">
+            <div>
+                <img src="images/help_huaxiang.png">客户画像
+                <span class="help_up"></span>
+            </div>
+            <ul style="display: block">
+                <li>
+                    匹配上的客户将会展示详细的客户画像，从这里您可以了解客户，发掘客户产品需求，准确定义客户。<br>
+                    其中用户需求会分成不同类型描述用户的保险需求详情，未来我们会根据您的需求归类添加更多信息需求。
+                    <div class="fengexian"></div>
+                    <ul>
+                        <li class="help_second" id="caifu">
+                            <div class="second_title">“财富”：</div>
+                            <p>
+                                按照城市分类，对不同分类城市收入水平划分为“富裕、高收入、中高收入、中等收入、初级小康、低收入”。<br/>
+                                按照支出的数额定义了支出分档：“超高消费、高消费、中高消费、中等消费、中低消费、低消费”。<br/>
+                                城市的分类： 遵循常用的国内城市分类将城市分为分类四线（一线、二线、三线、四线、其他）。
+                            </p>
+                        </li>
+                        <li class="help_second" id="xuqiu">
+                            <div class="second_title">“需求”：</div>
+                            <p>
+                                本应用从“婴幼、儿童”、“健康、医疗、保健”、“运动、户外、意外“、”出差、旅游、出行“、”车险、汽车用品 “、”保险、理财、分红、投连、投资“六个类别描述客户需求，我们正在挖掘更多的客户需求展示给您。
+                            </p>
+                        </li>
+                        <li class="help_second">
+                            <div class="second_title">“偏好”：</div>
+                            <p>
+                                偏好包括客户对品牌的偏好和购物时对品类的兴趣偏好。
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="fengexian01" style="display: none"></div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

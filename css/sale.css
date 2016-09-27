@@ -1,0 +1,659 @@
+@font-face {
+    font-family:DSF;
+    src: url(dsf.TTF);
+}
+body{
+    font-family:DSF;
+    font-size:28px;
+    background-color:#f0f0f0;
+}
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    -webkit-text-size-adjust:none;
+    height: 100%;
+}
+ul li{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+button{
+    border: none;
+    outline:none;
+}
+/*浮动占位*/
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+}
+.clearfix{
+    overflow:hidden;
+    *zoom:1;
+}
+/*================================================headerR=============================================================*/
+.headerR{
+    width:100%;
+    height:96px;
+    overflow:hidden;
+    margin:0 auto;
+    background-color:#3e454d;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.headerR_under{
+    z-index:-1;
+    width:100%;
+    height:96px;
+    position: relative;
+    top: 0;
+}
+.headerR ul{
+    width:100%;
+}
+.headerR ul li{
+    list-style:none;
+    float:left;
+}
+.back{
+    margin-left:5%;
+    margin-top:30px;
+    background-image: url(../images/fanhui.png);
+    width:32px;
+    height:32px;
+}
+.back a{
+    display:block;
+    width:100%;
+    height:100%;
+}
+.shuxian{
+    height:40px;
+    margin-left:5%;
+    margin-top:28px;
+    background-color:#21262b;
+}
+.wenzi{
+    margin-left:5%;
+    margin-top:30px;
+    height:36px;
+    line-height:36px;
+    color:#fafafa;
+    font-size:36px;
+}
+/*============================================销售线索header==========================================================*/
+.headerR .sale_nav{
+    width: 622px;
+    margin: 0 auto;
+}
+.headerR .sale_nav li{
+    margin-left: 0;
+}
+.headerR .sale_nav li a,.headerR .filter{
+    color: #cbced1;
+}
+.headerR .myself,.headerR .filter{
+    float: right;
+    line-height: 28px;
+    margin-top: 25px;
+}
+.headerR .sale_nav li a{
+    display: inline-block;
+    padding: 6px 20px 6px 32px;
+    background: url(../images/sale_myself.png) no-repeat 0 6px;
+}
+.filter{
+    padding: 6px 13px 6px 50px;
+    background: #5d656e url(../images/sale_filter.png) no-repeat 13px 11px;
+}
+/*============================================线索详情xiansuoInfo=====================================================*/
+.content_sale{
+    width: 712px;
+    margin: 32px auto;
+}
+.content_sale>div{
+    border: 1px solid #cbced1;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: white;
+}
+.xiansuo_info{
+    padding: 40px 51px 0;
+}
+.xiansuo_info>div{
+    color: #5d656e;
+    margin-bottom: 25px;
+}
+.xiansuo_info .person_info{
+    font-size: 34px;
+    color: #21262b;
+    margin-bottom: 20px;
+}
+.person_info span{
+    margin-right: 15px;
+}
+.info_area{
+    font-size: 24px;
+    color: #7f878f;
+    border-bottom: 1px solid #d8d8d8;
+    margin-top: 15px;
+    padding-bottom: 22px;
+}
+.baoxian{
+    position: relative;
+}
+.baoxian ul{
+    position: absolute;
+    left: 74px;
+    top: -5px;
+}
+.baoxian ul li{
+    float: left;
+    padding: 5px 16px;
+    border-radius: 7px;
+    color: white;
+    background-color: #7f878f;
+    margin-right: 10px;
+}
+.xiansuo_info .baoxian ul li{
+    background-color: #f7941d;
+}
+.baoxian + div{
+    margin-bottom: 20px;
+}
+.xiansuo_info .date{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.money{
+    padding: 70px 0 40px;
+}
+.money div{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.money div:first-child{
+    color: #1f1f1f;
+    font-size: 32px;
+    height: 32px;
+    line-height: 32px;
+}
+.money div:nth-child(2){
+    color: #f04e30;
+    font-size: 34px;
+}
+.money div:nth-child(2) span{
+    font-size: 72px;
+}
+.money div:nth-child(3){
+    font-size: 32px;
+    color: #5d656e;
+    margin-bottom: 0;
+}
+.money button{
+    width: 370px;
+    height: 88px;
+    color: #fefefe;
+    font-size: 28px;
+    background-color: #f04e30;
+    border-radius: 5px;
+    margin: 10px 171px;
+    font-family:DSF;
+    display: none;
+}
+.money div:last-child{
+    color: #a4aab0;
+    margin:50px auto 40px;
+}
+.money div:last-child input{
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+}
+.money div:last-child a{
+    color: #3e454d;
+}
+.content_sale .qiang{
+    width: 146px;
+    height: 146px;
+    border: 6px solid #f04e30;
+    border-radius: 79px;
+    font-size: 72px;
+    color: #f04e30;
+    line-height: 72px;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 40px 277px;
+}
+/*余额不足，按钮失效*/
+.content_sale .qiang_disabled{
+    border: 6px solid #a4aab0;
+    color: #a4aab0;
+    width: 146px;
+    height: 146px;
+    border-radius: 79px;
+    font-size: 72px;
+    line-height: 72px;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 40px 277px;
+}
+/*=====================================================销售线索saleXiansuo============================================*/
+.guanzhu,.qiandao{
+    height: 60px;
+    background-color: white;
+    color: #7f878f;
+    font-size: 24px;
+    padding: 0 51px;
+}
+.qiandao{
+    line-height: 60px;
+    color: #f04e30;
+    background-color: #f0f0f0;
+}
+.guanzhu ul,.guanzhu span{
+    float: left;
+    line-height: 24px;
+    margin-top: 18px;
+    margin-right: 17px;
+}
+.guanzhu ul{
+    margin-left: 15px;
+    position: relative;
+    top: -7px;
+}
+.guanzhu ul li{
+    float: left;
+    margin-right: 20px;
+    padding: 7px 12px;
+    background-color: #f7941d;
+    border-radius: 7px;
+    color: #fff;
+}
+.content_saleXiansuo{
+    margin: 32px auto 163px;
+    width: 712px;
+}
+.content_saleXiansuo #thelist>li{
+    border: 1px solid #cbced1;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    background-color: white;
+    padding: 40px 51px 0;
+}
+.info_wrap{
+    border-bottom: 1px solid #d8d8d8;
+}
+.content_saleXiansuo .info{
+    float: left;
+    width: 520px;
+}
+.content_saleXiansuo .username,
+.content_saleXiansuo .tel{
+    font-size: 34px;
+    line-height: 34px;
+    color: #21262b;
+    float: left;
+    margin-right: 15px;
+}
+.content_saleXiansuo .qiang_info{
+    float: right;
+    width: 88px;
+    height: 88px;
+    border-radius: 44px;
+    background-color: #f04e30;
+    color: #fefefe;
+    font-size: 36px;
+    line-height: 88px;
+    text-align: center;
+}
+.content_saleXiansuo .info div{
+    margin-bottom: 25px;
+}
+.content_saleXiansuo .info_wrap .baoxian{
+    margin-bottom: 15px;
+    clear: both;
+}
+.content_saleXiansuo .date{
+    font-size: 24px;
+    line-height: 24px;
+    margin: 17px auto;
+    color: #7f878f;
+}
+/*===========================================================遮罩=====================================================*/
+.bg,.bg_filter,.bg_content_nochecked{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62,69,77,0.5);
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+/*===================================筛选======================================*/
+.content_filter{
+    width: 712px;
+    background-color: #f0f0f0;
+    margin: 156px auto 0;
+}
+.content_filter>div{
+    margin-bottom: 8px;
+    background-color: white;
+    padding: 0 51px 40px;
+}
+.area_filter{
+    overflow: hidden;
+}
+.area_filter div:first-child,.xianzhong div:first-child{
+    height: 50px;
+    line-height: 50px;
+    color: #f04e30;
+    padding-left: 38px;
+    background: url(../images/sale_area.png) no-repeat 0 11px;
+    border-bottom: 1px solid #cbced1;
+    margin-bottom: 10px;
+}
+.xianzhong div:first-child{
+    background: url(../images/sale_baoxian.png) no-repeat 0 13px;
+}
+.area_filter ul{
+    width: 172px;
+    float: left;
+    color: #21262b;
+    padding: 8px 4px;
+    border-right: 1px solid #cbced1;
+    margin-bottom: -10000em;
+    padding-bottom: 10000em;
+}
+.area_filter .sheng{
+    margin-left: 6px;
+}
+.area_filter .qu{
+    border-right: none;
+}
+.area_filter ul li{
+    width: 122px;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 50px;
+}
+.xianzhong ul{
+    padding: 18px 0 28px 60px;
+}
+.xianzhong ul li{
+    float: left;
+    margin-right: 27px;
+    height: 40px;
+    /*width: 100px;*/
+    /*text-align: center;*/
+    padding: 0 8px;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+/*地区选中状态*/
+.checked_area{
+    background-color: #cbced1;
+}
+/*险种选中状态*/
+.checked{
+    background-color: #f04e30;
+    color: white;
+}
+.content_filter .xianzhong{
+    padding-bottom: 0px;
+}
+.content_filter .btn{
+    height: 120px;
+    padding: 0;
+    margin: 0;
+}
+.content_filter .btn button{
+    width: 128px;
+    height: 70px;
+    font-size: 32px;
+    color: white;
+    border-radius: 10px;
+    /*margin: 25px 292px;*/
+    margin-top: 25px;
+}
+.content_filter .confirm{
+    background-color: #f04e30;
+    margin-left: 190px;
+}
+.content_filter .cancel{
+    background-color: #a4aab0;
+    margin-left: 50px;
+}
+/*===============================筛选条件查询没有数据==============================*/
+.data_kong{
+    display: none;
+    color: #7f878f;
+    text-align: center;
+    margin-top: 30%;
+}
+/*===================================抢单成功======================================*/
+.content_qiang{
+    width: 500px;
+    background-color: white;
+    position: fixed;
+    top: 156px;
+    left: 50%;
+    -webkit-transform: translate(-50%,-0%);
+    -moz-transform: translate(-50%,-0%);
+    z-index: 3;
+    border-radius: 10px;
+}
+.content_qiang div:first-child{
+    font-size: 36px;
+    color: #f04e30;
+    line-height: 60px;
+    margin-top: 20px;
+    text-align: center;
+    border-bottom: 2px solid #f04e30;
+}
+.sale_success{
+    text-align: center;
+    margin: 88px auto 50px;
+}
+.content_qiang p{
+    color: #21262b;
+    padding: 0 51px;
+}
+.content_qiang button{
+    width: 250px;
+    height: 68px;
+    color: white;
+    font-size: 32px;
+    background-color: #f04e30;
+    border-radius: 7px;
+    margin: 56px 125px 30px          ;
+}
+/*================================session为空,请重新登录=================================*/
+.content_session{
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    position: fixed;
+    top: 156px;
+    left: 50%;
+    -webkit-transform: translate(-50%,-0%);
+    -moz-transform: translate(-50%,-0%);
+    z-index: 3;
+}
+.warning{
+    text-align: center;
+    margin: 98px auto 30px;
+}
+.content_session p {
+    color: #21262b;
+    padding: 0 42px;
+    text-align: center;
+}
+.content_session button,
+.content_recharge button{
+    width: 200px;
+    height: 68px;
+    color: white;
+    font-size: 32px;
+    background-color: #f04e30;
+    border-radius: 7px;
+    margin: 25px 150px 30px          ;
+}
+.content_session .contact,
+.content_recharge .recharge{
+    margin-left: 40px;
+    margin-right: 0px;
+}
+.content_session .cancel_contact,
+.content_recharge .cancel01{
+    margin-left: 20px;
+    margin-right: 0;
+    background-color: #a4aab0;
+}
+/*未选中地区险种*/
+.content_nochecked{
+    top: 220px;
+}
+/*===========================================================footer===================================================*/
+footer{
+    width: 720px;
+    height: 122px;
+    background-color: white;
+    border-top: 1px solid #cbced1;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+}
+/*footer .menu_sale{
+    background:url(../images/menu_sale_off.png) no-repeat 64px 15px;
+}*/
+footer .menu_pipei{
+    background:url(../images/menu_pipei_off.png) no-repeat 108px 15px;
+}
+footer .menu_zhanghu{
+    background:url(../images/menu_zhanghu_off.png) no-repeat  103px 15px;
+}
+footer .menu_more{
+    background:url(../images/menu_more_off.png) no-repeat 59px 15px;
+}
+footer .selected .menu_sale{
+    background:url(../images/menu_sale_on.png) no-repeat 64px 15px;
+}
+footer .selected .menu_pipei{
+    background:url(../images/menu_pipei_on.png) no-repeat  108px 15px;
+}
+footer .selected .menu_zhanghu{
+    background:url(../images/menu_zhanghu_on.png) no-repeat  103px 15px;
+}
+footer .selected .menu_more{
+    background:url(../images/menu_more_on.png) no-repeat  59px 15px;
+}
+footer ul li{
+    float: left;
+}
+footer a{
+    display: inline-block;
+    color: #5d656e;
+    width: 260px;
+    line-height: 28px;
+    padding: 80px 0 15px;
+    text-align: center;
+}
+footer li:last-child a{
+    width: 170px;
+}
+footer  .selected a{
+    color: #bd3c26;
+}
+
+
+
+.content_saleXiansuo{
+    height: auto;
+}
+/*上滑翻页*/
+#wrapper{
+    position:absolute;
+    z-index:1;
+    top:0px;
+    bottom:0px;
+    left:-9999px;
+    width:100%;
+    overflow:auto;
+}
+
+#scroller{
+    position:absolute;
+    z-index:1;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width:100%;
+    padding:0;
+}
+#pullDown{
+    height: 60px;
+    background-color: #f0f0f0;
+    text-align: center;
+    color: #7f878f;
+    font-size: 24px;
+    line-height: 60px;
+    position: relative;
+}
+#pullDown img{
+    position: absolute;
+    top: 10px;
+    left: 250px;
+}
+#pullUp{
+    margin-top: -30px;
+}
+#pullDown, #pullUp {
+    background:#f0f0f0;
+    height:44px;
+    line-height:44px;
+    padding:5px 10px;
+}
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+    display:block; float:left;
+    width:40px; height:40px;
+    background:url(pull-icon@2x.png) 0 0 no-repeat;
+    -webkit-background-size:40px 80px; background-size:40px 80px;
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-duration:250ms;
+}
+#pullDown .pullDownIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+#pullUp .pullUpIcon  {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+    from { -webkit-transform:rotate(0deg) translateZ(0); }
+    to { -webkit-transform:rotate(360deg) translateZ(0); }
+}

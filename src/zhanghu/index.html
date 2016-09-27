@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>融e保</title>
+    <script type="text/javascript" src="../lib/m-base.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/sale.css">
+    <link type="text/css" rel="stylesheet" href="./index.css">
+    <script type="text/javascript" src="../../plugins/zepto.min.js"></script>
+    <script type="text/javascript" src="../../plugins/underscore-min.js"></script>
+    <script type="text/javascript" src="../../js/iscroll.js"></script>
+    <!--<script type="text/javascript" src="../../js/cordova.js"></script>-->
+
+</head>
+<body>
+<!--header-->
+<header class="headerR">
+    <ul class="sale_nav">
+        <li class="wenzi"><span id="title">账户</span></li>
+    </ul>
+</header>
+<!--/header-->
+
+<div class="tab">
+    <ul class="tab_menu clearfix">
+        <li class="zhulibi curr">助理币</li>
+        <li class="jifen">我的积分</li>
+    </ul>
+    <div class="tab_content">
+        <div class="content_zhulibi">
+            <div class="zhulibi_num">
+                <div>助理币</div>
+                <div>
+                    <div class="clearfix" style="display: inline-block">
+                        <span class="coin">￥</span><span class="money_zhulibi"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="../zhifu/index.html" style="display: block;">
+                <button class="zhuanghu_btn">充值</button>
+            </a>
+        </div>
+        <div class="content_jifen content_hide">
+            <div class="zhulibi_num">
+                <div>积分</div>
+                <div>
+                    <div class="clearfix" style="display: inline-block">
+                        <span class="money_jifen"></span>
+                    </div>
+                    <!--<span class="money_jifen"></span>-->
+                </div>
+            </div>
+            <a href="../../jifen.html" style="display: block;">
+                <button class="zhuanghu_btn">兑换</button>
+            </a>
+        </div>
+    </div>
+    <div class="zhulibi_help">
+        <span class="zhulibi_helpinfo">账户消费明细</span>
+        <a href="../../help.html"><img src="../../images/help.png"></a>
+    </div>
+</div>
+<header class="headerR_under" style="height: 699px"></header>
+
+<div id="wrapper">
+    <div id="scroller">
+        <ul class="zhanghu_info" id="thelist">
+        </ul>
+
+        <div id="pullUp" class="pullUp">
+        </div>
+    </div>
+</div>
+<div id="wrapper1">
+    <div id="scroller1">
+        <ul class="zhanghu_info" id="jifenthelist">
+        </ul>
+        <div id="pullUp1" class="pullUp">
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<footer>
+    <ul>
+        <!--<li>
+            <a href="saleXiansuo.html" class="menu_sale">销售线索</a>
+        </li>-->
+        <li>
+            <a href="../../main.html" class="menu_pipei">客户画像</a>
+        </li>
+        <li class="selected">
+            <a href="./index.html" class="menu_zhanghu">账户</a>
+        </li>
+        <li>
+            <a href="../../shezhi.html" class="menu_more">更多</a>
+        </li>
+    </ul>
+</footer>
+<!--/footer-->
+
+
+<!--遮罩-->
+<div class="bg" style="display: none;z-index: 11;">
+</div>
+<!--session为空,请重新登录-->
+<div class="content_session content_sessionNull" style="display: none;z-index: 12;">
+    <div class="warning"><img src="../../images/login_fail.png"></div>
+    <p>您的登录状态已改变，请重新登录。</p>
+    <button class="finish_sure">重新登录</button>
+</div>
+<!--账号已在其他设备上登录-->
+<div class="content_session content_other" style="display: none;z-index: 12">
+    <div class="warning"><img src="../../images/login_fail.png"></div>
+    <p>您的账号已在其他设备上登录，请在本设备上重新登录。</p>
+    <button class="finish_sure">重新登录</button>
+</div>
+<!--722内部错误-->
+<div class="content_session content_contact" style="display: none;z-index: 12">
+    <div class="warning"><img src="../../images/warning.png"></div>
+    <p>程序似乎出了点问题，程序员君在玩命修复中...</p>
+    <button class="contact">联系我们</button>
+    <button class="cancel_contact">取消</button>
+</div>
+
+<!---->
+<script>
+    var isIOS = (/iphone|ipad/gi).test(navigator.appVersion);
+    if (isIOS) {
+        document.getElementsByTagName("footer")[0].style.bottom = "20px";
+//        document.getElementById("scroller")[0].style.paddingBottom="20px";
+    }
+
+    //顶层页面返回键
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    function onBackKeyDown() {
+        navigator.app.exitApp();
+    }
+</script>
+<script type="text/javascript" src="./index.js"></script>
+<!--<script type="text/javascript" src="./iscroll_zj_new.js"></script>-->
+</body>
+</html>

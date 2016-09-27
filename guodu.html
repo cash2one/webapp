@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>保险经纪助手</title>
+    <script>
+
+        var c=window.screen.width;
+
+        if(c!=720){
+            if(c>720){
+                var prt=0.5;
+            }else{
+                var prt=c/720;
+
+
+            }
+        }else{
+            var prt=0.5;
+        }
+        document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+
+	
+
+    </script>
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />-->
+    <!--<meta name="MobileOptimized" content="320"/>-->
+    <link href="css/shezhi.css" type="text/css" rel="stylesheet">
+		<script>
+		
+		var storage = window.localStorage; 
+						
+						
+						
+		if(storage.getItem("flag")!=null && storage.getItem("flag")==2){
+			window.location.href="login.html";
+		}
+		
+		
+		
+		
+		
+	</script>
+</head>
+<body>
+<div class="wrap cnt" id="slider">
+    <div class="logo">
+        <!--<img src="images/logo.png">-->
+    </div>
+    <footer class="banben">
+        当前版本 1.0
+    </footer>
+</div>
+
+
+<script src="js/guodu.js" language="javascript" type="text/javascript"></script>
+
+<script>
+    setTimeout('window.location="cpjs.html"',1500)
+</script>
+
+</body>
+</html>

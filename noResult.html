@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+   	<script>
+		
+		var c=window.screen.width;
+		
+		if(c!=720){
+			if(c>720){
+				var prt=0.5;
+			}else{
+				var prt=c/720;
+				
+				
+			}
+		}else{
+			var prt=0.5;
+		}
+		document.write('<meta name="viewport" content="width=device-width, initial-scale='+prt+', maximum-scale='+prt+', minimum-scale='+prt+'" />')
+		
+		
+		
+	</script>
+
+	<!--顶层页面返回键-->
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script>
+		document.addEventListener("backbutton",onBackKeyDown,false);
+		function onBackKeyDown(){  navigator.app.exitApp();  }
+	</script>
+	
+	
+	
+	<title>融e保</title>
+	<link type="text/css" href="css/css.css" rel="stylesheet" />
+	
+</head>
+
+<body>
+	
+	
+		<header class="header">
+			<span>客户画像</span>
+			<!--<label class="shezhi"><a href="shezhi.html"><img src="images/shezhi.png"/></a></label>-->
+		</header>
+		
+		<div class="content">
+			
+			<div class="smileImg">
+				<img src="images/smile.png" />
+			</div>
+			
+			
+			<div class="smileWenzi">
+				<span>没有客户匹配记录，开始您的客户匹配。</span>
+			</div>
+			
+			<div class="smileBtn">
+				<button>+客户匹配</button>
+			</div>
+
+		</div>
+
+		<footer class="footer_pipei">
+			<ul>
+				<!--<li>
+					<a href="saleXiansuo.html" class="menu_sale">销售线索</a>
+				</li>-->
+				<li class="selected">
+					<a href="main.html" class="menu_pipei">客户画像</a>
+				</li>
+				<li>
+					<a href="zhanghu.html" class="menu_zhanghu">账户</a>
+				</li>
+				<li>
+					<a href="shezhi.html" class="menu_more">更多</a>
+				</li>
+			</ul>
+		</footer>
+
+		
+<script src="js/js.js" language="javascript" type="text/javascript"></script>
+<script src="js/zepto.min.js" language="javascript" type="text/javascript"></script>
+<script src="js/yanzheng.js" language="javascript" type="text/javascript"></script>
+
+		<script>
+			var isIOS = (/iphone|ipad/gi).test(navigator.appVersion);
+			if(isIOS){
+				document.getElementsByClassName("footer_pipei")[0].style.bottom="20px";
+			}
+		</script>
+</body>
+</html>

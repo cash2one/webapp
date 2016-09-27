@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>支付页面</title>
+		<style type="text/css">
+			.pay_box li span.on{
+				background: url(../../images/radiobox－on.png) no-repeat;
+			}
+		</style>
+		<script type="text/javascript" src="../lib/m-base.js"></script>
+    	<script>
+			function fuzhi(v){
+				document.getElementById('fz').innerHTML=v;
+			}
+		</script>
+	<link rel="stylesheet" href="../fankui/index.css" />
+	</head>
+	<body>
+		<header class="headerX">
+		    <ul>
+		        <li class="back"><a href="../zhanghu/index.html"></a></li>
+		        <li class="shuxian"></li>
+		        <li class="wenzi chongzhi"><span>充值</span></li>
+		    </ul>
+		</header>
+		
+		<div class="zhifu_sl">
+			<ul>
+				<li class="zhifu_text3">
+					<p class="zhifu_text">助理币<span>￥<a href="#" style="color: red;">0</a></span></p>
+				</li>
+				<li class="zhifu_text2">
+					购买数量
+					<select onchange="fuzhi(this.value)">
+						<option value="50">50</option>
+						<option value="100">100</option>
+						<option value="200">200</option>
+					</select>
+					<span>
+						￥<a id="fz" href="#">50</a>元
+					</span>
+				</li>
+				<li class="zhifu_text4">
+					<p>在本应用中的所有消费都是通过助理币支付，<br />助理币是按照一比一的比例购买。</p>
+				</li>
+				
+			</ul>
+			<ul class="pay_box">
+				<li class="zhifu_text5">
+					<img class="zhifu_wxbz" src="../../images/wxzf.png" />
+					<div class="zhifu_wx">
+						<h1>微信支付</h1>
+						<h2>推荐安装微信5.0及以上的版本使用</h2>
+					</div>
+					<span class="zhifu_zfbxz on"></span>
+				</li>
+				<li class="zhifu_text6">
+					<img class="zhifu_zfbbz" src="../../images/zfbzf.png" />
+					<div class="zhifu_zfb">
+						<h1>支付宝支付</h1>
+						<h2>推荐有支付宝的账号的用户使用</h2>
+					</div>
+					<span class="zhifu_zfbxz"></span>
+				</li>
+			</ul>	
+			<button class="zhifu_btn">确认订单，去支付</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/zepto.js"></script>
+	<script type="text/javascript">
+		$(".pay_box li").on("click",function(){
+			$(this).find("span").addClass("on").parent().siblings().find("span").removeClass("on");
+		})
+		
+	</script>
+</html>
+
